@@ -3657,6 +3657,7 @@ a.bx-next {
 box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);
     border-color: #99d6ff;
     cursor: pointer;
+    
 }
 
 
@@ -6048,6 +6049,7 @@ ul.sip li a:hover {
 
 .cl_sec img:nth-child(2) {
     height: 170px;
+    
 }
 
 .featured_slider_sec ul li h4 a {
