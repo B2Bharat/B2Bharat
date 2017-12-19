@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+.adpost-details ul li a:hover@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 body {
     margin: 0px;
     padding: 0px;
     font-size: 14px;
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
+  
 }
 
 * {
@@ -3715,6 +3716,7 @@ ul.tab_le_sec {
     line-height: 1.42857143;
     /* border: 1px solid #ddd!important; */
     border-radius: 0!important;
+  
 }
 
 .nav-tabs>li.active>a,
@@ -3794,11 +3796,15 @@ p.des_sec {
     list-style: none;
     margin: 0px 15px;
 }
-
+.container-fluid.feedback_bg{
+    background: #f5f5f5;
+}
 .container-fluid.feedback_bg ul>li>a {
-    background: #000;
+    background: #f5f5f5;
     color: #fff;
     padding: 7px 52px;
+   
+        
 }
 
 a.sr_sec {
@@ -6221,7 +6227,6 @@ ul.sip li a:hover {
 .label-success {
     background: #ffb000 !important;
 }
-
 .right_sidebar a:hover {
     color: #fff;
     text-decoration: underline;
@@ -6312,7 +6317,17 @@ ul.sip li a:hover {
 
 .ad-item.ad-item-2.row {
     display: block !important;
+    border:2px gray solid ;
+    webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+/* -webkit-box-shadow: 0px 0px 30px 0px rgba(128,128,128,0.7);
+-moz-box-shadow:    0px 0px 30px 0px rgba(128,128,128,0.7);
+box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);*/
+    border-color: #99d6ff;
+    cursor: pointer;
 }
+
 
 .pad_wrap.blk-cap strong {
     padding-left: 53px;
@@ -8714,6 +8729,7 @@ form.showform input {
 
 .well .adpost-details .nav-tabs {
     border-bottom: none;
+    background-color:#774040;
 }
 
 .tabbing_sec_wrapper .br_sec .tab-content.well {

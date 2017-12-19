@@ -1,4 +1,4 @@
-/* Table of Contents
+#main .slider-text h3.title/* Table of Contents
 
 
 
@@ -256,9 +256,9 @@ textarea {
 }
 
 .nav-tabs>li {
-    background-color: #147dc1;
+    background-color: #774040;
     float: left;
-    padding: 0px 0px 20px;
+    padding: 0px ;
 }
 
 .nav li a:hover,
@@ -696,6 +696,7 @@ textarea {
     margin-bottom: 5px;
 }
 
+
 .ad-info .item-title a {
     color: #000;
     /* font-size:14px; */
@@ -744,9 +745,12 @@ textarea {
 
 .ad-info .item-cat a:hover,
 .ad-info .item-price {
-    color: #D9A474;
+    color: #f60;
+/*    text-decoration: underline;*/
 }
-
+.ad-info .item-price:hover{
+    text-decoration: underline;
+}
 .ad-meta {
     background-color: #f6f6f6;
     border-top: 1px solid #eeeeee;
@@ -758,6 +762,7 @@ textarea {
     padding-left: 10px;
     display: table;
     font-size: 14px;
+        background-color: lightgrey;
 }
 
 .ad-meta .meta-content {
@@ -1009,6 +1014,20 @@ a.verified i {
 
 .item-info {
     min-height: 152px;
+    background-color: whitesmoke;
+    
+   
+}
+.item-info:hover {
+    //min-height: 152px;
+    webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+ -webkit-box-shadow: 0px 0px 30px 0px rgba(128,128,128,0.7);
+-moz-box-shadow:    0px 0px 30px 0px rgba(128,128,128,0.7);
+box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);
+    border-color: #99d6ff;
+    cursor: pointer;
 }
 
 .item-image-box {
@@ -1113,8 +1132,8 @@ a.verified i {
 
 #download>.parallax-section:before {
     min-height: 400px
+        
 }
-
 #download h2 {
     color: #fff;
     font-size: 26px;
@@ -1494,14 +1513,14 @@ a.verified i {
 
 .breadcrumb li,
 .breadcrumb li a {
-    color: #fff;
+    color: #000000;
     font-weight: 300;
 }
 
 .breadcrumb>li+li:before {
     content: "\f101";
     font-family: FontAwesome;
-    color: #fff;
+    color: #000000;
 }
 
 #something-sell h2.title {
@@ -1769,11 +1788,13 @@ a.verified i {
 
 #something-sell {
     /* background-image: url(../images/bg/1.jpg); */
-    padding: 40px 0 60px;
+    padding: 83px 0 60px;
 }
 
 #something-sell.parallax-section:before {
-    background-color: #ffb000;
+    background-color: #635e55;
+    height: 10px;
+    h
 }
 
 
@@ -1783,7 +1804,10 @@ a.verified i {
 
 #main.details-page {
     /* padding-bottom:50px; */
-    padding-bottom: 15px;
+    padding-bottom: 0px;
+    padding-top: 0px
+      background-color:white;    background: lightgray;
+
 }
 
 .details-page .banner {
@@ -1952,6 +1976,9 @@ a.verified i {
     color: #000;
     /* margin: 11px 0 8px; */
     margin: 5px 0 8px;
+}
+#main .slider-text h3.title:hover{
+    color:#f60;
 }
 
 .slider-text h4 {
@@ -2207,12 +2234,33 @@ a.verified i {
 
 .adpost-details.adpost-details h4 {
     border-bottom: 1px solid #f2f2f2;
-    color: #000;
+    color: #863232;
     font-size: 20px;
     margin-bottom: 20px;
-    margin-top: 0;
+    margin-top: 8px;
     padding-bottom: 10px;
+    padding-left: 15px;
+    font-weight: 600;
 }
+.adpost-details.adpost-details h4:hover{
+    background: #e1e1e1;
+    border-top: 1px solid #d0d0d0;
+    
+   
+}
+p{
+    margin: 0px 22px 10px;
+}
+/*p:hover{
+      background:white;
+    border-top: 1px solid #d0d0d0;
+    
+}*/
+.santosh:hover{
+    background: white;
+    border: 1px solid gray;
+}
+
 
 .adpost-details .seller-info h4 {
     margin-bottom: 35px;
@@ -2756,7 +2804,7 @@ a.verified i {
 .myads-page .my-ads h2 {
     font-weight: 300;
     color: #2a2a2a;
-    margin-top: 10px;
+    margin-top: 10px;#FFA07A
     margin-bottom: 30px;
 }
 
@@ -2766,15 +2814,15 @@ a.verified i {
    ========================================================================== */
 
 .ad-profile {
-    background-color: #fff;
+    background-color: #774040;
     overflow: hidden;
     padding: 0;
 }
 
 .user-profile {
-    background: rgba(0, 0, 0, 0) radial-gradient(circle, #c5ad47, #0055b1) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) radial-gradient(circle, #FFFFFF, #FFFFFF) repeat scroll 0 0;
     overflow: hidden;
-    padding: 0 25px 20px;
+    padding: 1 25px 20px;
 }
 
 .user-images {
@@ -2792,15 +2840,21 @@ a.verified i {
 .ad-profile .user {
     float: left;
 }
+.ad-profile .user:hover{
+    color:#f60;
+}
 
 .ad-profile .user h2 {
     font-weight: 300;
-    color: #FFF;
+    color: ;#000000;
     margin-top: 20px;
 }
 
 .ad-profile .user h3 {
-    color: #FFF;
+    color: #000000;
+}
+.ad-profile .user h3:hover{
+    color:#f60;
 }
 
 .ad-profile .user h2 a {
@@ -2829,7 +2883,7 @@ a.verified i {
 .ad-profile .favorites-user small {
     display: block;
     font-size: 16px;
-    color: #FFF;
+    color: #000000;
     /* line-height: 0; */
 }
 
@@ -2848,29 +2902,37 @@ a.verified i {
 }
 
 .ad-profile .favorites-user small:hover {
-    color: #FFF;
+    color: #0000FF;
     text-decoration: underline;
 }
 
 .ad-profile .user-menu {
-    border-top: 1px solid #f5f5f5;
+    border-top: 1px solid #610303;
 }
 
 .ad-profile .user-menu li {
-    padding: 15px 20px;
+     padding: 15px 20px;
     float: left;
     border-left: 1px solid #f5f5f5;
+    margin-bottom: -10px;
+    margin-top: -3px;
 }
-
+.ad-profile .user-menu li:hover {
+    background-color: 	#B22222;
+    
+}
 .ad-profile .user-menu li a {
     /* color: #9fa4a4; */
     font-size: 16px;
+    color: white; 
 }
 
 .ad-profile .user-menu li.active a,
 .ad-profile .user-menu li a:hover {
     /* color: #00a651; */
-    color: #4EAA17;
+    //color: #4EAA17;
+      
+
 }
 
 .user-pro-section .section {
@@ -2985,14 +3047,17 @@ a.verified i {
 }
 
 
-/* ==========================================================================
+/* =====================================.breadcrumb li, .breadcrumb li a=====================================
            About Us 
    ========================================================================== */
 
 .breadcrumb-section h2.title {
     margin-top: 0;
     margin-bottom: 32px;
+    font-size: 20px;color:black;
+    
 }
+
 
 .breadcrumb-section .breadcrumb {
     margin-bottom: 0;
@@ -4740,6 +4805,7 @@ span.round-tab:hover {
     bottom: 0px;
     border: 10px solid transparent;
     border-bottom-color: #fff;
+    
 }
 
 .wizard .nav-tabs>li a {
@@ -4748,10 +4814,13 @@ span.round-tab:hover {
     margin: 10px auto 30px;
     border-radius: 100%;
     padding: 0;
+  
 }
+
 
 .wizard .nav-tabs>li a:hover {
     background: transparent;
+      
 }
 
 .wizard .tab-pane {
@@ -4762,6 +4831,9 @@ span.round-tab:hover {
 .wizard h3 {
     margin-top: 0;
 }
+
+    
+
 
 @media( max-width: 585px) {
     .wizard {
@@ -4778,6 +4850,7 @@ span.round-tab:hover {
         width: 50px;
         height: 50px;
         line-height: 50px;
+        
     }
     .wizard li.active:after {
         content: " ";
@@ -5448,6 +5521,17 @@ ul {
 /* .description h4, .short-info table tbody { border: 1px solid#dadada;} */
 
 .description h4,
+.short-info h4 {
+    font-weight: 500;
+    color: #863232;
+    /* margin-bottom: 18px; */
+    margin-bottom: 10px;
+}
+h4:hover{
+    background-color: #e1e1e1;
+    
+}
+.description h4,
 .short-info table tbody th,
 td {
     padding: 3px;
@@ -5640,6 +5724,8 @@ td {
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
     transform: scale(1);
+      border:1px solid;  
+    
 }
 
 .zm-in:hover {
@@ -5653,7 +5739,8 @@ td {
     transition: all 200ms ease-in;
     transform: scale(1.1);
     border-radius: 5px;
-    margin-top: 10px
+    margin-top: 10px;
+ 
 }
 
 .ad-meta-selling-list {
@@ -6137,6 +6224,13 @@ transition: all 0.5s ease;*/
     min-height: 420px  !important ;
     overflow: visible !important;
     padding-bottom: 10px;
+}
+
+.mainproduct{
+    color:blue;
+}
+.mainproduct:hover{
+    color:#f60;
 }
 
 .categorydetail .col-sm-4.col-xs-6.new.catttr {   float: left;   width: 100%;  }
