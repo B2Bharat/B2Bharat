@@ -1,7 +1,8 @@
 <?
-$tpTitle = 'B2Bharat.com - Companies List';
-$pgDesc = 'B2Bharat.com - Companies List';
-$pgKeywords = 'B2Bharat - Companies List';
+$tpTitle = 'Company-list Of Manufacturer, buyers and suppliers in B2Bharat.com';
+$pgDesc = 'B2B directory for Indian buyers, sellers, suppliers and Wholesaler.';
+$pgKeywords = 'B2Bharat, Paints, Food Machiner, Automobile and parts, Chemicals and Solvents, Construction plant and machinery, Electricales and Electronics, Furniture, Health and Medical, Industrial Fabrication, Jewellery and Gems Stone, Machine Tools and Hardware, Manufacturing Plant and Machinery, Metals, Mineral and Energy, Packaging Goods and Machinery, Paper, Rubber and Plastic, Safety product, Security and Protection Equipment, Services, Sports, Toys and Fitness Equipment, B2Bharat online portal';
+
 include "header.php";
 include "include/searchDiv.php";
 include "pagination.php";
