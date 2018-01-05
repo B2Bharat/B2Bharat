@@ -369,7 +369,7 @@ if($act == "ps")
 
                             <!-- Wizard Container 1 -->
 
-                                <div class="wizard-title"> Choose Categories </div>
+                                <div class="wizard-title"> Choose Category </div>
 
                                     <div class="wizard-container">
 
@@ -379,11 +379,11 @@ if($act == "ps")
 
                                              <h5 class="semibold text-primary">
 
-                                                <i class="fa fa-sign-in"></i> Categories
+                                                <i class="fa fa-sign-in"></i> Category
 
                                                 </h5>
 
-                                                        <p class="text-muted"> Select Categories</p>
+                                                        <p class="text-muted"> Select Category</p>
 
                                                     </div>
 
@@ -407,7 +407,7 @@ if($act == "ps")
 
 												<div class="form-group">
 
-                                                    <label class="col-sm-2 control-label"> Product Category : <span class="text-danger">*</span></label>
+                                                    <label class="col-sm-2 control-label"> Select Category : <span class="text-danger">*</span></label>
 
                                                     <div class="col-sm-6" id="cat1">
 
@@ -425,7 +425,7 @@ if($act == "ps")
 
 												<div class="form-group">
 
-                                                    <label class="col-sm-2 control-label"> Product Sub Category : <span class="text-danger">*</span></label>
+                                                    <label class="col-sm-2 control-label"> Select Sub Category : <span class="text-danger">*</span></label>
 
                                                     <div class="col-sm-6" id="cat2">
 
@@ -441,7 +441,7 @@ if($act == "ps")
 
 												<div class="form-group">
 
-                                                    <label class="col-sm-2 control-label"> Second Level Sub Category : <span class="text-danger">*</span></label>
+                                                    <label class="col-sm-2 control-label"> Select Second Level Sub Category : <span class="text-danger">*</span></label>
 
                                                     <div class="col-sm-6" id="cat3">
 
@@ -746,7 +746,7 @@ if($act == "ps")
 
                                                         </h5>
 
-                                                        <p class="text-muted"> Add Product and Brochures </p>
+                                                        <p class="text-muted"> Add Product Image and Brochure </p>
 
                                                     </div>
 
@@ -1238,11 +1238,11 @@ if($act == "ps")
 
                                                         <h5 class="semibold text-primary">
 
-                                                            <i class="fa fa-cog"></i> Packaging and Shipment
+                                                            <i class="fa fa-cog"></i> Packaging and Shipping
 
                                                         </h5>
 
-                                                        <p class="text-muted"> Packaging and Shipment Details</p>
+                                                        <p class="text-muted"> Packaging and Shipping Details</p>
 
                                                     </div>
 
