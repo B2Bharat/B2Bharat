@@ -514,6 +514,7 @@ if($act == "ps")
 														<div class="col-md-3">
 
                                                             <label>Unit Price:<span class="text-danger">*</span></label>
+                                                            
 
                                                             <input type="text" pattern="^[1-9][0-9]{0,7}" name="unit_price" id="unit_price" class="form-control" value="<? echo $unit_price; ?>" data-parsley-type="number" data-parsley-group="information" data-parsley-required/>
 
@@ -525,7 +526,7 @@ if($act == "ps")
 
 							<select name="unitp_quan_type" class="form-control" data-parsley-group="information" data-parsley-required>
 
-						ion value="">Select Unit</option>
+                                                            <option value="">Select Unit</option>
 
 						<?echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$unitp_quan_type);?> </select>
 
@@ -666,7 +667,7 @@ if($act == "ps")
 
 												 <label>Current Unit:</label>
 
-												 <input type="text" name="prod_size" id="prod_size" class="form-control" data-parsley-type="number" data-parsley-group="information" value="<? echo $prod_size; ?>"/>
+												 <input type="text"  pattern="^[1-9][0-9]{0,7}" name="prod_size" id="prod_size" class="form-control" data-parsley-type="number" data-parsley-group="information" value="<? echo $prod_size; ?>"/>
 
 												 </div>
 
