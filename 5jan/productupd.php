@@ -1164,7 +1164,8 @@ if($act == "ps")
 
                                                             <label>Specifications: </label>
 
-                                                            <input pattern="/^[a-z]{0,40}$/" name="specifications" id="specifications" class="form-control" value="<? echo $specifications; ?>">
+                                                            <input   name="specifications" pattern="[a-z|A-z|0-9|\s]{1,40}"
+ id="specifications" class="form-control" value="<? echo $specifications; ?>">
 
                                                         </div>
 
@@ -1180,7 +1181,7 @@ if($act == "ps")
 
                                                             <label>Brand Name: </label>
 
-                                                            <input maxlength="20"  title="upto 20 characters" name="brand_name" id="brand_name" class="form-control" value="<? echo $brand_name; ?>">
+                                                            <input maxlength="20"   name="brand_name" id="brand_name" class="form-control" value="<? echo $brand_name; ?>">
 
                                                         </div>
 
@@ -1204,7 +1205,7 @@ if($act == "ps")
 
                                                             <label>HS CODE: </label>
 
-                                                            <input  name="hs_code" minlength="10" maxlength="10"   pattern="^[1-9][0-9]{0,9}" id="hs_code" class="form-control" value="<? echo $hs_code; ?>" >
+                                                            <input  name="hs_code"  maxlength="10"  pattern="^[1-9][0-9]{0,9}" id="hs_code" class="form-control" value="<? echo $hs_code; ?>" >
 
                                                         </div>
 
@@ -1394,7 +1395,7 @@ if($act == "ps")
 
                                                            <label>Contract Period: </label>
 
-                                                           <input name="contract_period" maxlength="400" id="contract_period" class="form-control" value="<? echo $contract_period; ?>"/>
+                                                           <input name="contract_period" id="contract_period" class="form-control" value="<? echo $contract_period; ?>"/>
 
                                                         </div>
 
@@ -1434,7 +1435,7 @@ if($act == "ps")
 
                                                            <label>Guarantee Period: </label>
 
-                                                           <input name="garranty_period" maxlength="400" id="garranty_period" class="form-control" value="<? echo $garranty_period; ?>"/>
+                                                           <input name="garranty_period"  id="garranty_period" class="form-control" value="<? echo $garranty_period; ?>"/>
 
                                                         </div>
 
