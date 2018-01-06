@@ -288,27 +288,27 @@ if(!isset($max_unit))
 											  <div class="upload-section">
 												<div class="row">
 													<label class="upload-image" for="upload-image-one">
-													<input type="file" id="upload-image-one" name="photo1" accept="image/*" onchange="img_validate('upload-image-one',1000,600,5,3,'img_div');" > 
-													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/1000x600/<?echo @$prod['photo1'];?>" id="img_div"/></div>
+													<input type="file" id="upload-image-one" name="photo1" accept="image/*" onchange="img_validate('upload-image-one',200,200,5,3,'img_div');" > 
+													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/200x200/<?echo @$prod['photo1'];?>" id="img_div"/></div>
 													</label>
 												</div><br/>
 												
 												<div class="row">
 													<label class="upload-image" for="upload-image-two">
-													<input type="file" id="upload-image-two" name="photo2" accept="image/*" onchange="img_validate('upload-image-two',1000,600,5,3,'img_div2' );" >
-													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/1000x600/<?echo @$prod['photo2'];?>" id="img_div2"/></div>
+													<input type="file" id="upload-image-two" name="photo2" accept="image/*" onchange="img_validate('upload-image-two',200,200,5,3,'img_div2' );" >
+													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/200x200/<?echo @$prod['photo2'];?>" id="img_div2"/></div>
 													</label>
 												</div><br/>
 												<div class="row">	
 													<label class="upload-image" for="upload-image-three">
-													<input type="file" id="upload-image-three" name="photo3" accept="image/*" onchange="img_validate('upload-image-three',1000,600,5,3,'img_div3');">
-													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/1000x600/<?echo @$prod['photo3'];?>" id="img_div3"></img></div>								
+													<input type="file" id="upload-image-three" name="photo3" accept="image/*" onchange="img_validate('upload-image-three',200,200,5,3,'img_div3');">
+													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/200x200/<?echo @$prod['photo3'];?>" id="img_div3"></img></div>								
 													</label>
 												</div><br/>	
 												<div class="row">
 													<label class="upload-image" for="upload-image-four">
-													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/1000x600/<?echo @$prod['photo4'];?>" id="img_div4"></img></div>
-													<input type="file" id="upload-image-four" name="photo4" accept="image/*" onchange="img_validate('upload-image-four',1000,600,5,3,'img_div4');" >
+													<div class="row"><img src="<?echo $siteurl;?>/uploads/product/200x200/<?echo @$prod['photo4'];?>" id="img_div4"></img></div>
+													<input type="file" id="upload-image-four" name="photo4" accept="image/*" onchange="img_validate('upload-image-four',200,200,5,3,'img_div4');" >
 													</label>
 												</div><br/>	
 											  </div>
@@ -567,7 +567,7 @@ if(isset($ed_Prod)) {
 		$BrImg = substr($BrImg,0,strpos($BrImg,'.'));
 		
 		if($_FILES['photo1']['tmp_name']!=''){
-			$isUpd = $com_obj->upload_image("photo1",$BrImg,1000,600,5,3,"uploads/product/1000x600/","update");
+			$isUpd = $com_obj->upload_image("photo1",$BrImg,200,200,5,3,"uploads/product/200x200/","update");
 			if($isUpd){
 				$NgImg=$com_obj->img_Name;
 				$set.=",photo1='$NgImg'";
@@ -577,7 +577,7 @@ if(isset($ed_Prod)) {
 		$BrImg = $prod['photo2'];
 		$BrImg = substr($BrImg,0,strpos($BrImg,'.'));
 		if($_FILES['photo2']['tmp_name']!=''){
-			$isUpd = $com_obj->upload_image("photo2",$BrImg,1000,600,5,3,"uploads/product/1000x600/","update");
+			$isUpd = $com_obj->upload_image("photo2",$BrImg,200,200,5,3,"uploads/product/200x200/","update");
 			if($isUpd){
 				$NgImg=$com_obj->img_Name;
 				$set.=",photo2='$NgImg'";
@@ -586,7 +586,7 @@ if(isset($ed_Prod)) {
 		$BrImg = $prod['photo3'];
 		$BrImg = substr($BrImg,0,strpos($BrImg,'.'));
 		if($_FILES['photo3']['tmp_name']!=''){
-			$isUpd = $com_obj->upload_image("photo3",$BrImg,1000,600,5,3,"uploads/product/1000x600/","update");
+			$isUpd = $com_obj->upload_image("photo3",$BrImg,200,200,5,3,"uploads/product/200x200/","update");
 			if($isUpd){
 				$NgImg=$com_obj->img_Name;
 				$set.=",photo3='$NgImg'";
@@ -595,7 +595,7 @@ if(isset($ed_Prod)) {
 		$BrImg = $prod['photo4'];
 		$BrImg = substr($BrImg,0,strpos($BrImg,'.'));
 		if($_FILES['photo4']['tmp_name']!=''){
-			$isUpd = $com_obj->upload_image("photo4",$BrImg,1000,600,5,3,"uploads/product/1000x600/","update");
+			$isUpd = $com_obj->upload_image("photo4",$BrImg,200,200,5,3,"uploads/product/200x200/","update");
 			if($isUpd){
 				$NgImg=$com_obj->img_Name;
 				$set.=",photo4='$NgImg'";
