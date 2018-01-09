@@ -1,7 +1,8 @@
 <?
-$tpTitle = 'B2Bharat.com - Products List';
-$pgDesc = 'B2Bharat.com - Products List';
-$pgKeywords = 'B2Bharat - Products List';
+$tpTitle = 'Product-list | Search all types of buyers and suppliers product list';
+$pgDesc = 'Online business directory for industrial paints, Industrial Fabrication, Storage Tanks, Heavy Fabrication, Welding Equipments, Manufacturing Plants, Rubber and Plastic.';
+$pgKeywords = 'Agricultural, Food Machinery, Apparel and Garments, Arts and Handicrafts, Automobile and parts, Ayurved,Books and Stationery, Office Supplies, Chemicals and Solvents, Construction plant and machinery, Electrical and Electronics, Furniture, Health and Medical, Industrial Fabrication, Jewelery and Gems Stone, Machine Tools and Hardware, Manufacturing Plant and Machinery, Metals, Mineral and Energy, Packaging Goods and Machinery, Paper, Rubber and Plastic, Safety product, Security and Protection Equipment, Services, Sports, Toys and Fitness Equipment, Textile and Furnishing.';
+
 
 include "header.php";
 include "include/searchDiv.php";
