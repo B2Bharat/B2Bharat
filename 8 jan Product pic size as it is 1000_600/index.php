@@ -1,7 +1,7 @@
 <?
 $tpTitle = 'B2Bharat.com - Online B2B Market Place, Indian Exporters, Manufacturers, Suppliers Business Directory.';
-$pgDesc = 'B2Bharat.com - Online B2B Market Place, Indian Exporters, Manufacturers, Suppliers Business Directory.';
-$pgKeywords = 'B2Bharat.com - Online B2B Market Place, Indian Exporters, Manufacturers, Suppliers Business Directory.';
+$pgDesc = 'B2Bharat.com is India fastest growing online marketplace that makes buying and selling easier, faster and more economical, B2Bharat provides a convenient platform for all businesses to reach more customers, boost sales and garner higher profits.B2Bharat fills the gap between Manufacturers, Suppliers, Exporters, Importers, Buyers, International Buyers, Wholesalers, Products and Trade Leads by making communication easier and economical.It is a ticket to limitless opportunities and unprecedented success.';
+$pgKeywords = 'Indian Business Directory,Indian manufacturers, suppliers, exporters, import business directory, Indian e-commerce directory,free business listings in b2bharat, b2bharat business,corporate directory, b2b marketplace, b2bharat search engine, b2bharat e-commerce portal, Indian b2b business portal, b2b online business listings, online marketplace, service providers directory ';
 include "header.php"; 
 $getnewprod=$db->get_all_asso("SELECT `id`,`category_name`,`parent_id` FROM category WHERE parent_id=0  AND category_name !='' group by category_name  ORDER BY category_name ASC LIMIT 12");
 ?>
