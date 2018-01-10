@@ -78,7 +78,7 @@ if(!isset($max_unit))
                                                                         
                                                                         
 									<div class="row form-group add-title">
-										<label class="col-sm-3 label-title">Product Title<span class="required">*</span></label>
+										<label class="col-sm-3 label-title">Product Name<span class="required">*</span></label>
 										<div class="col-sm-9">
 											<input type="text" class="form-control" name="prod_name" id="text" value="<? echo $prod['prod_name']; ?>" required>
 										</div>
@@ -417,7 +417,7 @@ if(!isset($max_unit))
 									</div>
 									
 									<div class="row form-group model-name">
-										<label class="col-sm-3 label-title">Garrantee Period </label>
+										<label class="col-sm-3 label-title">Guarantee Period </label>
 										<div class="col-sm-9">
 											<input type="text" class="form-control" name="g_period" id="model" value="<? echo $prod['garranty_period']; ?>">	
 										</div>
