@@ -53,21 +53,14 @@ if($pBal < 1 && $pBal != 'unlimited'){
                     <div class="wizard-inner">
                       <!-- <div class="connecting-line"></div> -->
                       <ul class="nav nav-tabs" role="tablist">
-                           <li role="presentation" class="disabled text-center">
-                          <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="step 4" aria-expanded="true">
-                          <span class="round-tab">
-                             <i class="fa fa-info" aria-hidden="true"></i>
-                          </span>
-                          </a>
-                          <p class="register-info">Product <br> Info </p>
-                        </li>
+                           
                         <li role="presentation" class="text-center  active">
                           <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1" aria-expanded="false">
                           <span class="round-tab">
                             <i class="fa fa-list-alt" aria-hidden="true"></i>
                           </span>
                           </a>
-                          <p class="register-info">Category Information</p>
+                          <p class="register-info">Choose Category</p>
                         </li>
                         <li role="presentation" class="disabled text-center">
                           <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2" aria-expanded="false">
@@ -75,7 +68,7 @@ if($pBal < 1 && $pBal != 'unlimited'){
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                           </span>							
                           </a>
-                          <p class="register-info">Order and Payment </p>
+                          <p class="register-info">Order Details </p>
                         </li>
                         <li role="presentation" class="disabled text-center">
                           <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3" aria-expanded="false">
@@ -83,7 +76,16 @@ if($pBal < 1 && $pBal != 'unlimited'){
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                           </span>
                           </a>
-                          <p class="register-info">Photos and Brochure </p>
+                          <p class="register-info">Product Images</p>
+                        </li>
+                        
+                        <li role="presentation" class="disabled text-center">
+                          <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="step 4" aria-expanded="true">
+                          <span class="round-tab">
+                             <i class="fa fa-info" aria-hidden="true"></i>
+                          </span>
+                          </a>
+                          <p class="register-info">Product <br> Info </p>
                         </li>
                        
                         <li role="presentation" class="disabled text-center">
@@ -92,7 +94,7 @@ if($pBal < 1 && $pBal != 'unlimited'){
                             <i class="fa fa-archive" aria-hidden="true"></i>
                           </span>
                           </a>
-                          <p class="register-info">Packaging & Shipment </p>
+                          <p class="register-info">Packaging Details </p>
                         </li>
 						
 						<li role="presentation" class="disabled text-center">
@@ -101,14 +103,14 @@ if($pBal < 1 && $pBal != 'unlimited'){
                             <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                           </span>
                           </a>
-                          <p class="register-info">More <br> &nbsp;</p>
+                          <p class="register-info">More Details<br> &nbsp;</p>
                         </li>
                       </ul>
                     </div>
                     <form action="add-product" id="addproct" method="post" role="form" enctype="multipart/form-data">
                       <div class="tab-content well" >
                         <div class="tab-pane active" role="tabpanel" id="step1">
-                          <h4>Category Management</h4>
+                          <h4>Select Category</h4>
                          
                           
                           <div class="row form-group model-name">
@@ -154,7 +156,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 </ul>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step2">
-                          <h4>Cost or Price</h4>
+                          <h4>Price Details</h4>
                         
 						  
 						  <div class="row form-group add-title">
@@ -181,10 +183,22 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 						  
 						  
                           <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Max Price (Strikethrough) <span class="required">*</span></label>
+                            <label class="col-sm-3 label-title">Max Price <span class="required">*</span></label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="max_price" id="max_price" placeholder="" required 
 							  value="<? /* echo @$max_price; */ ?>" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
+                            </div>
+                          </div>
+
+                           <div class="row form-group">
+                            <label class="col-sm-3">Is price negotiable?<span class="required">*</span></label>
+                            <div class="col-sm-9 user-type">
+							  <?
+							  foreach($PS_Negot as $St) {
+							    $Stl=strtolower($St);
+								echo "<input type='radio' name='nego' value='$Stl' id='$Stl'> <label for='$Stl'>$St</label>";
+							  }
+							  ?>
                             </div>
                           </div>
 						  
@@ -220,7 +234,9 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 								</div> <!-- /.form-group -->
 							  </div>
 							  <div class="col-sm-6">
+                                                              
 							     <select class="form-control" name="size_unit">
+                                                                    <option value="">Select Unit</option>
 									 <?
 									 $size_unit = isset($size_unit)?$size_unit:'';
 									 echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$size_unit);
@@ -231,7 +247,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>
 						  
 						  <div class="row form-group additional">
-                            <label class="col-sm-3 label-title">Payment Method </label>
+                            <label class="col-sm-3 label-title">Payment Type </label>
                             <div class="col-sm-9 row">
                               <div class="checkbox">
 							    <?
@@ -258,6 +274,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							  </div>
 							  <div class="col-sm-6">
 							     <select class="form-control" name="ord_qunit">
+                                                                 <option value="">Select Unit</option>
 									 <?
 									 $ord_qunit = isset($ord_qunit)?$ord_qunit:'';
 									 echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$ord_qunit);
@@ -283,17 +300,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>
 						  
 						  
-						  <div class="row form-group">
-                            <label class="col-sm-3">Is price negotiable? <span class="required">*</span></label>
-                            <div class="col-sm-9 user-type">
-							  <?
-							  foreach($PS_Negot as $St) {
-							    $Stl=strtolower($St);
-								echo "<input type='radio' name='nego' value='$Stl' id='$Stl'> <label for='$Stl'>$St</label>";
-							  }
-							  ?>
-                            </div>
-                          </div>
+						
 
 
 <ul class="list-inline pull-right">
@@ -302,7 +309,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 </ul>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step3">
-                          <h4>Pictorial Illustration</h4>
+                          <h4>Add Product Images and Brochure</h4>
                           
 						  <div class="row form-group add-image">
                             <label class="col-sm-3 label-title">Upload Photos <small style="color:red;">(image size should be 1000x600)</small><span class="required">*</span></label>
@@ -349,7 +356,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>
 						  
 						  
-                          <!--<div class="row form-group add-title">
+<!--                          <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Other Related Items</label>
                             <div class="col-sm-9">
                               <textarea class="form-control" name="related" rows="3"><? echo @$related; ?></textarea>
@@ -357,12 +364,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>-->
 						  
 						  
-						  <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Colour</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="color" id="text" value="<? echo @$color; ?>">
-                            </div>
-                          </div>
+						  
 
 						  
 <ul class="list-inline pull-right">
@@ -376,9 +378,9 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           
                                  
 						  <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Product Group <span class="required">*</span></label>
+                            <label class="col-sm-3 label-title">Product Group Name <span class="required">*</span></label>
                                               <div class="col-sm-9">
-                              <input type="text" class="form-control" name="prod_group" id="prod_group" placeholder="" value="<? echo @$prod_group; ?>" >
+                              <input type="text" class="form-control" name="prod_group_name" id="prod_group_name" placeholder="" value="<? echo @$prod_group_name; ?>" >
                               
                                                </div>
                                                  </div>
@@ -426,15 +428,15 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>
                           
                                           
-						  <div class="row form-group add-title">
-                                                        <label class="col-sm-3 label-title"> Product Brief Description</label>
+						                             <div class="row form-group add-title">
+                                                        <label class="col-sm-3 label-title"> Product Group Description</label>
                                                         <div class="col-sm-9">
-                                                          <textarea class="form-control" name="p_des" rows="5"><? echo @$p_des; ?></textarea>
+                                                          <textarea class="form-control" name="prod_gdes" rows="5"><? echo @$prod_gdes; ?></textarea>
                                                         </div>
                                                    </div>
 						  
 						  <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Brief Description</label>
+                            <label class="col-sm-3 label-title">Product Brief Description</label>
                             <div class="col-sm-9">
                               <textarea class="form-control" name="b_des" rows="5"><? echo @$b_des; ?></textarea>
                             </div>
@@ -442,7 +444,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 						  
 						  
 						  <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Detailed Description<span class="required">*</span></label>
+                            <label class="col-sm-3 label-title">Product Detailed Description<span class="required">*</span></label>
                             <div class="col-sm-9">
                               <textarea required class="form-control" name="d_des" id="d_des" rows="5"><? echo @$d_des; ?></textarea>
                             </div>
@@ -483,7 +485,13 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                               <input type="text" class="form-control" name="material" id="text" placeholder="" value="<? echo @$material; ?>">
                             </div>
                           </div>
-						  
+						
+                          <div class="row form-group add-title">
+                            <label class="col-sm-3 label-title">Colour</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="color" id="text" value="<? echo @$color; ?>">
+                            </div>
+                          </div>
 						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">HS Code</label>
                             <div class="col-sm-9">
@@ -491,19 +499,27 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                             </div>
                           </div>
 						  
-						  <div class="row form-group add-title">
+			   <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Model/Articles Number</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="model" id="text" placeholder="" value="<? echo @$model; ?>" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
                             </div>
                           </div>
+                          
+                          <div class="row form-group add-title">
+                            <label class="col-sm-3 label-title">Other Related Items</label>
+                            <div class="col-sm-9">
+                              <textarea class="form-control" name="related" rows="3"><? echo @$related; ?></textarea>
+                            </div>
+                          </div>
 						  
-						  <div class="row form-group add-title">
+			<div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Manufacturers</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="manufac" id="text" placeholder="" value="<? echo @$manufac; ?>">
                             </div>
                           </div>
+                           
 						  
 						  
 <ul class="list-inline pull-right">
@@ -512,7 +528,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 </ul>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step5">
-                          <h4>Shipping Details</h4>
+                          <h4>Packaging and Shipping Details</h4>
                           
 						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Maximum Supply Capacity<span class="required">*</span></label>
@@ -527,6 +543,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							  </div>
 							  <div class="col-sm-6">
 							     <select class="form-control" name="max_unit">
+                                                                 <option value="">Select Unit</option>
 									 <?
 									 $max_unit=isset($maxunit)?$max_unit:'';
 									 echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$max_unit);
@@ -536,8 +553,15 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							  
                             </div>
                           </div>
+                          
+                          
+                                                                 
+                          
+                          
+                          
+                          
 						  
-						  <div class="row form-group">
+	             <div class="row form-group">
                             <label class="col-sm-3">Shipping Terms<span class="required">*</span></label>
                             <div class="col-sm-9 user-type">
 								<input type="text" class="form-control" name="sh_terms" id="sh_terms" value="<? echo @$sh_terms; ?>" >
@@ -565,9 +589,9 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                         </div>
 						
 						<div class="tab-pane" role="tabpanel" id="step6">
-                          <h4>Custom Field(s) With More Info</h4>
+                          <h4>Additional Details</h4>
                           
-						  <div class="row form-group add-title">
+<!--						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Custom Fields Name-Value</label>
                             <div class="col-sm-9 row">
 							  <div class="col-md-6">
@@ -577,7 +601,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							   <input type="text" class="form-control" name="cfn2" id="text" value="<? echo @$cfn2; ?>">
 							  </div>
                             </div>
-                          </div>
+                          </div>-->
 						  
 						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Contract Period</label>

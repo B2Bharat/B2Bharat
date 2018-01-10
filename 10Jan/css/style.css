@@ -8726,8 +8726,8 @@ form.showform input {
 }
 
 .ad-item .ad-meta {
-    width: 150%;
-    margin-bottom: -23px;
+    width: 100%;
+   // margin-bottom: -23px;
 }
 
 .well .adpost-details .nav-tabs {

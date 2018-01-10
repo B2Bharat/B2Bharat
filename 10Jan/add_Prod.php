@@ -52,6 +52,7 @@ if(isset($add_Prod)) {
 	$hscode=trim(addslashes($hscode));
 	$model=trim(addslashes($model));
 	$manufac=trim(addslashes($manufac));
+        $related=trim(addslashes($related));
 	
 	$max_capacity=trim(addslashes($max_capacity));
 	$max_unit=trim(addslashes($max_unit));
@@ -67,7 +68,7 @@ if(isset($add_Prod)) {
 	$prod_no=trim(addslashes($prod_no));
 	$dt=date("Y-m-d H:i:s");
 	$BrImg= "Brochure-".$userid."-".uniqid().".jpg";
-	$com_obj->upload_image("brch",$BrImg,200,200,5,3,"uploads/product/Brochures/","new");
+	$com_obj->upload_image("brch",$BrImg,1000,600,5,3,"uploads/product/Brochures/","new");
 		
 	if($prod_name=="" ) {
 		echo "<script>swal('Oops..', 'You must need to enter the product name!', 'error');</script>";
@@ -112,6 +113,7 @@ if(isset($add_Prod)) {
 		$set.=",hs_code='hscode'";
 		$set.=",mode_article_num='$model'";
 		$set.=",manufacturers='$manufac'";
+                $set.=",other_relateditems='$related'";
 		$set.=",shipping_terms='$sh_terms'";
 		$set.=",packaging_details='$pack_det'";
 		$set.=",shipment='$shipment'";
@@ -180,10 +182,10 @@ function imageupd($P_image,$fname,$userid,$sno) {
 		{
 			$NgImg= "Product-".$userid."-".uniqid().".".$ext;
 			$img_org = "uploads/product/$NgImg";
-			$img_size = "uploads/product/200x200/$NgImg";
+			$img_size = "uploads/product/1000x600/$NgImg";
 			move_uploaded_file($fpath,$img_org);
 			$resizeObj = new resize($img_org);
-			$resizeObj -> resizeImage(200, 200, 'exact');
+			$resizeObj -> resizeImage(1000, 600, 'exact');
 			$resizeObj -> saveImage($img_size, 72);
 			@unlink($img_org);
 			

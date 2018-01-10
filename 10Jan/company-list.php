@@ -68,7 +68,7 @@ $COM_info = $db->get_all_asso($sql . $limit);
 							  </div>
 							  <div class="ad-meta">
 								<div class="meta-content">
-								  <!--<a href="#" class="btn view-more-btn-2-1" data-toggle="modal" data-target="#contact-now" ><i class="fa fa-phone" aria-hidden="true"></i> Contact Now </a>-->
+								  <a href="#" class="btn view-more-btn-2-1" data-toggle="modal" data-target="#contact-now" ><i class="fa fa-phone" aria-hidden="true"></i> Contact Now </a>
 								  
 								  <span class="tag  ml20">          
 								   <input type="checkbox" name="send_enqs[]" value="<?echo $cemail[0];?>">

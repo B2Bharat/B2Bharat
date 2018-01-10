@@ -1,8 +1,7 @@
 <?
 $tpTitle = 'Product-list | Search all types of buyers and suppliers product list';
-$pgDesc = 'Online business directory for industrial paints, Industrial Fabrication, Storage Tanks, Heavy Fabrication, Welding Equipments, Manufacturing Plants, Rubber and Plastic.';
-$pgKeywords = 'Agricultural, Food Machinery, Apparel and Garments, Arts and Handicrafts, Automobile and parts, Ayurved,Books and Stationery, Office Supplies, Chemicals and Solvents, Construction plant and machinery, Electrical and Electronics, Furniture, Health and Medical, Industrial Fabrication, Jewelery and Gems Stone, Machine Tools and Hardware, Manufacturing Plant and Machinery, Metals, Mineral and Energy, Packaging Goods and Machinery, Paper, Rubber and Plastic, Safety product, Security and Protection Equipment, Services, Sports, Toys and Fitness Equipment, Textile and Furnishing.';
-
+$pgDesc = 'Online business directory for industrial paints, Industrial Fabrication, Storage Tanks, Heavy Fabrication, Welding Equiepments, Manufacturing Plants, Rubber and Plastic.';
+$pgKeywords = 'Agricultural, Food Machinery, Apparel and Garments, Arts and Handicrafts, Automobile and parts, Ayurved,Books and Stationery, Office Supplies, Chemicals and Solvents, Construction plant and machinery, Electricales and Electronics, Furniture, Health and Medical, Industrial Fabrication, Jewellery and Gems Stone, Machine Tools and Hardware, Manufacturing Plant and Machinery, Metals, Mineral and Energy, Packaging Goods and Machinery, Paper, Rubber and Plastic, Safety product, Security and Protection Equipment, Services, Sports, Toys and Fitness Equipment, Textile and Furnishing.';
 
 include "header.php";
 include "include/searchDiv.php";
@@ -18,7 +17,7 @@ include "pagination.php";
 $rowsPerPage=$Prod_RecPerPage;
 $limit=limitation(15);
 
-if(($_POST['MS_Categ']=='') && ($_POST['MS_SCateg']=='') && (isset($_POST['Main_Srch'])))
+if((!isset($_POST['MS_Categ'])) && (!isset($_POST['MS_SCateg'])) && (isset($_POST['Main_Srch'])))
 {
 	
 	
@@ -160,6 +159,7 @@ if(($_POST['MS_Categ']=='') && ($_POST['MS_SCateg']=='') && (isset($_POST['Main_
 							$price=$prc[0]; */
 							
 							$ccode = $db->singlerec("select currencycode from currency_code where id ='".$prd['prod_currency_loc']."' LIMIT 1");
+                                                        var_dump($ccode);
 							$price=$prd['prod_minprice'];
 							if($price)
 								$price=$price.' '.$ccode[0];
@@ -174,6 +174,8 @@ if(($_POST['MS_Categ']=='') && ($_POST['MS_SCateg']=='') && (isset($_POST['Main_
 							$fcat=$db->singlerec("select category_name from category where id='".$prd['prod_category']."'");
 							$cat=ucwords($fcat['category_name']);
 							$pname=ucwords($prd['prod_name']);
+                                                    
+							var_dump($pname);
 							if(41<(strlen($pname)))
 								$pname=substr($pname,0,42)."...";
 							
@@ -184,6 +186,7 @@ if(($_POST['MS_Categ']=='') && ($_POST['MS_SCateg']=='') && (isset($_POST['Main_
 							$mem_pack_name = $db->singlerec("select name from membership where id = '".$mem_pack[0]."'");
 							
 							$country = $db->singlerec("select * from register where id = '".$prd['userid']."'");
+                                                        
 							
 							$prod_no=$prd['prod_no'];
 	
@@ -195,13 +198,13 @@ if(($_POST['MS_Categ']=='') && ($_POST['MS_SCateg']=='') && (isset($_POST['Main_
 			   <div class="col-md-6 pr_img">
 					<h2><a target="_blank" href="<? if(!empty($ownerweburl)) {echo $ownerweburl;}else{ 
 					echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; }?>"><? echo substr($pname,0,15); ?></a></h2>
-					<a href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; ?>"><img src="<? echo $siteurl; ?>/uploads/product/1000x600/<? echo $prd['photo1']; ?>" alt="<? echo $pname;//$name; ?>" class="img-responsive"></a>
+                               <a href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; ?>" style="border-color:red; "><img src="<? echo $siteurl; ?>/uploads/product/1000x600/<? echo $prd['photo1']; ?>" alt="<? echo $pname;//$name; ?>" class="img-responsive" ></a>
 			   </div>
 			   <div class="col-md-6 pr_descript">
-				 <p><? echo substr($prd['prod_briefdes'],0,170).'...'; ?> </p>
+				 <p><? echo substr($prd['prod_briefdes'],0,120).'...'; ?> </p>
 			   </div>
-			</div>    
-		   <div class="en_wrap">
+			 
+		   <div class="en_wrap" >
 				<div class="col-md-7 enqiry_sec">
 					<h3><? echo $country['company_name']; ?></h3>
 					<p><? echo $country['address']; ?></p>
@@ -212,6 +215,7 @@ if(($_POST['MS_Categ']=='') && ($_POST['MS_SCateg']=='') && (isset($_POST['Main_
                            Send Enquiry</button>
 				</div>
 			</div>
+                            </div>   
 		</div>	
 	
 		
@@ -449,7 +453,7 @@ foreach($SL_Lst as $SL) {
 elseif(isset($_POST['Main_Srch']))
 {
 	?>
-       <div class="container">
+       <div class="container" >
 	   <!-- accordion-->
 	            <div class="secwrp_holder">
 					<div class="col-md-12 col-sm-12">
@@ -616,8 +620,8 @@ elseif(isset($_POST['Main_Srch']))
 
 ?>
 
-		<div class="col-md-4 product_sec">    
-			<div class="prd_wrapper">
+		<div class="col-md-4 product_sec" style="display: table-cell;">    
+                    <div class="prd_wrapper"  >
 			   <div class="col-md-6 pr_img">
 					<h2><a href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; ?>"><? echo substr($pname,0,15); ?></a></h2>
 					<a href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; ?>"><img src="<? echo $siteurl; ?>/uploads/product/1000x600/<? echo $prd['photo1']; ?>" alt="<? echo $pname;//$name; ?>" class="img-responsive"></a>
@@ -792,14 +796,14 @@ else{
 								<div class="dropdown pull-right">
 								
 								<!-- category-change -->
-								<!--<div class="dropdown category-dropdown">
+								<div class="dropdown category-dropdown">
 									<h5>Sort by:</h5>
 									<?
-									/* if($view=="featured") $srt_By="Featured";
+									if($view=="featured") $srt_By="Featured";
 									else if($view=="new") $srt_By="New";
 									else if($view=="best") $srt_By="Bestselling";
 									else if($view=="popular") $srt_By="Popular";
-									else $srt_By="All"; */
+									else $srt_By="All"; 
 									?>
 									<a data-toggle="dropdown" href="<? echo $siteurl; ?>/product-list"><span class="change-text"><? echo $srt_By; ?></span><i class="fa fa-caret-square-o-down"></i></a>
 									<ul class="dropdown-menu category-change">
@@ -809,7 +813,7 @@ else{
 										<li><a href="<? echo $siteurl; ?>/product-list/popular">Popular</a></li>
 										<li><a href="<? echo $siteurl; ?>/product-list/best">Bestselling</a></li>
 									</ul>
-								</div>-->														
+								</div>													
 								</div>							
 							</div><!-- featured-top -->	
 							
@@ -825,8 +829,8 @@ else{
 							if((int)$isThereC[0]===0  || (int)$isThereR[0]===0){continue;}	
 							//end
 								
-							/* $prc=explode('/', $prd['prod_minprice']);
-							$price=$prc[0]; */
+							$prc=explode('/', $prd['prod_minprice']);
+							$price=$prc[0]; 
 							
 							$ccode = $db->singlerec("select currencycode from currency_code where id ='".$prd['prod_currency_loc']."' LIMIT 1");
 							$price=$prd['prod_minprice'];
@@ -874,9 +878,17 @@ else{
 									<div class="ad-info ad-info-new">
 										
 										<h4 class="item-title"><a target="_blank" href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; ?>"><? echo $pname; ?></a></h4>
-										<div class="item-cat">
-											<span><a href="javascript:;"><? echo $prod_no; ?></a></span>
+										<div class="item-cat font-new">
+										   <span class="font-new">Price : &nbsp;<? echo $prd['prod_minprice']; ?></span>
 										</div>
+                                                                                
+                                                                                
+                                                                                
+<!--                                                                                <div class="item-cat">
+                                                                                    
+											<span><a href="javascript:;"><? echo $prod_no; ?></a></span>
+										</div>-->
+
 										<div class="item-cat">
 											<span><a href="javascript:;"><? echo $cat; ?></a></span>
 										</div>
@@ -891,8 +903,8 @@ else{
 									</div><!-- ad-info -->
 									
 									<!-- ad-meta -->
-									<div class="ad-meta">
-										<div class="meta-content">
+									<div class="ad-meta1">
+										<div class="meta-content1">
 											<span class="dated">Posted <? echo $post_dt; ?></span>&nbsp;&nbsp;&nbsp;
 											
 											
@@ -902,7 +914,7 @@ else{
 										   ( Select )
 										</span>
 											
-											<!--<a href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $prd['permalink']; ?>" class='btn view-more-btn-3' style="color:white;margin:0px;">read more</a>-->
+							<a href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $prd['permalink']; ?>" class='btn view-more-btn-3' style="color:white;margin:0px;">Read more</a>
 										</div>										
 										<!-- item-info-right -->
 										<div class="user-option pull-right">
@@ -910,7 +922,7 @@ else{
 											<a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?echo ucwords($mem_pack_name[0]);?>">
 												<img src="<?echo $siteurl;?>/assets/images/<?echo $com_obj->setBadge($mem_pack[0]);?>" width="20" >
 											</a>
-											<a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?echo $country[0];?>"><i class="fa fa-map-marker"></i> </a>											
+											<a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?echo ucwords($country[0]);?>"><i class="fa fa-map-marker"></i> </a>											
 										</div><!-- item-info-right -->
 									</div><!-- ad-meta -->
 								</div><!-- item-info -->
@@ -1095,3 +1107,4 @@ else{
 ?>
 
 <? include "footer.php"; ?>
+

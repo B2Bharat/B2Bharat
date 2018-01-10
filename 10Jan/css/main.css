@@ -765,30 +765,74 @@ textarea {
     font-size: 14px;
         background-color: lightgrey;
 }
+.ad-meta1 {
+    background-color: #f6f6f6;
+    border-top: 1px solid #eeeeee;
+    min-height: 35px;
+    position: absolute;
+    bottom: 2px;
+    right: 0px;
+    width: 100%;
+    padding-left: 10px;
+    display: table;
+    font-size: 14px;
+        background-color: lightgrey;
+}
 
 .ad-meta .meta-content {
     display: table-cell;
     vertical-align: middle;
+        margin-top: -20px;
 }
+.ad-meta1 .meta-content1 {
+    //display: table-cell;
+    vertical-align: middle;
+        margin-top: -20px;
+}
+
+
 
 .ad-meta .meta-content .dated {
     margin-right: 0px;
 }
+.ad-meta1 .meta-content1 .dated {
+    margin-right: 0px;
+}
+
 
 .ad-meta .meta-content .dated,
 .ad-meta .meta-content .visitors {
     font-weight: 500;
     color: #0e0e0e;
     margin-left: 50px;
+    margin-left: 181px;
 ;}
+
+.ad-meta1 .meta-content1 .dated,
+.ad-meta1 .meta-content1 .visitors {
+    font-weight: 500;
+    color: #0e0e0e;
+    margin-left: 50px;
+    margin-left: 181px;
+;}
+
 
 .ad-meta .meta-content span,
 .ad-meta .meta-content a {
     font-weight: 400;
     color: black;
 }
+.ad-meta1 .meta-content1 span,
+.ad-meta .meta-content a {
+    font-weight: 400;
+    color: black;
+}
+
 
 .ad-meta .meta-content a:hover {
+    color: #2c19f1;
+}
+.ad-meta1 .meta-content1 a:hover {
     color: #2c19f1;
 }
 
@@ -801,8 +845,20 @@ textarea {
     text-align: center;
     line-height: 35px;
 }
+.ad-meta1 .user-option a {
+    font-size: 18px;
+    color: #9fa4a4;
+    display: inline-block;
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
 
 .featured .ad-meta .user-option a {
+    width: 30px;
+}
+.featured .ad-meta1 .user-option a {
     width: 30px;
 }
 
@@ -810,16 +866,23 @@ textarea {
     background-color: #fff;
     color: #4EAA17;
 }
-
+.ad-meta1 .user-option a:hover {
+    background-color: #fff;
+    color: #4EAA17;
+}
 .ad-meta .user-option a.edit-item:hover {
     color: #0072bc;
 }
 
-.ad-meta .user-option a.delete-item {
+
+.ad-meta1 .user-option a.delete-item {
     color: #ed1c24;
 }
 
 .ad-meta .user-option a.delete-item:hover {
+    color: #c3171d;
+}
+.ad-meta1 .user-option a.delete-item:hover {
     color: #c3171d;
 }
 
@@ -827,8 +890,15 @@ textarea {
     margin-top: 7px;
     font-size: 12px;
 }
+.featured .ad-meta1 span a {
+    margin-top: 7px;
+    font-size: 12px;
+}
 
 .ad-meta a i {
+    text-align: right
+}
+.ad-meta1 a i {
     text-align: right
 }
 
@@ -869,15 +939,15 @@ a.verified i {
     width: 100%;
     height:100%; 
     
-   -moz-transition: all 0.8s;
+   -moz-transition: all 2s;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
 
 }
 .featured-image:hover{
-    -moz-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+    -moz-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(1.2);
   
 
 }
