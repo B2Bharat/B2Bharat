@@ -16,6 +16,7 @@ if(isset($add_Prod)) {
 	$max_price=trim(addslashes($_POST['max_price']));
 	//$minb_price=trim(addslashes($minb_price));
     $nego=trim(addslashes($nego));
+    $sh_terms=trim(addslashes($sh_terms));
     $prod_st=@implode(",",$prod_st);
 	$prod_st=trim(addslashes($prod_st));
 	$size_val=trim(addslashes($size_val));
@@ -59,8 +60,8 @@ if(isset($add_Prod)) {
 	$sh_terms=trim(addslashes($sh_terms));
 	$pack_det=trim(addslashes($pack_det));
 	$shipment=trim(addslashes($shipment));
-	$cfn1=trim(addslashes($cfn2));
-	$cfn2=trim(addslashes($cfn2));
+	//$cfn1=trim(addslashes($cfn2));
+	//$cfn2=trim(addslashes($cfn2));
 	$c_period=trim(addslashes($c_period));
 	$terms=trim(addslashes($terms));
 	$w_period=trim(addslashes($w_period));
@@ -92,6 +93,7 @@ if(isset($add_Prod)) {
 		$set.=",prod_maxprice='$max_price'";
 		//$set.=",prod_minprice='$minb_price'";
 		$set.=",price_negotiable='$nego'";
+                $set.=",shipping_terms='$sh_terms'";
 		$set.=",publish='$publish'";
 		$set.=",type_or_status='$prod_st'";
 		$set.=",prod_size='$size_val'";
@@ -114,7 +116,7 @@ if(isset($add_Prod)) {
 		$set.=",mode_article_num='$model'";
 		$set.=",manufacturers='$manufac'";
                 $set.=",other_relateditems='$related'";
-		$set.=",shipping_terms='$sh_terms'";
+		
 		$set.=",packaging_details='$pack_det'";
 		$set.=",shipment='$shipment'";
 		$set.=",contract_period='$c_period'";

@@ -128,13 +128,29 @@ $max_unit= $prod['max_sup_unit'];
                                                 </div>
                                             </div>
                                             <?php /* ===Code by ABhishek kandari===End */ ?>
+                                            <!-    code by santosh-->
                                             <div class="row form-group model-name">
-                                                <label class="col-sm-3 label-title">Keywords<span class="required">*</span></label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="keyword" id="model" value="<? echo "$prod[keyword1]|$prod[keyword2]|$prod[keyword3]|$prod[keyword4]"; ?>" required>	
+                                                <label class="col-sm-3 label-title"> Keywords<span class="required">*</span></label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" placeholder=" Enter keyword1" name="keyword" id="model" value="<? echo "$prod[keyword1]"; ?>" required>	
+                                                </div>
+                                              
+                                                <div class="col-sm-5">
+                                                    <input type="text" class="form-control" placeholder=" Enter keyword2" name="keyword" id="model" value="<? echo "$prod[keyword2]"; ?>" required>	
                                                 </div>
                                             </div>
-                                            <!--                                                                        code by santosh-->
+                                            
+                                            <div class="row form-group model-name">
+                                                    <label class="col-sm-3 label-title"><span class="required"></span></label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" placeholder=" Enterkeyword3" name="keyword" id="model" value="<? echo "$prod[keyword3]"; ?>" required>	
+                                                </div>
+                                                      
+                                                <div class="col-sm-5">
+                                                    <input type="text" class="form-control" placeholder=" Enter keyword3" name="keyword" id="model" value="<? echo "$prod[keyword4]"; ?>" required>	
+                                                </div>
+                                            </div>
+                                            <!-    code by santosh-->
                                             <div class="row form-group model-name">
                                                 <label class="col-sm-3 label-title">Product Group Description</label>
                                                 <div class="col-sm-9">
@@ -355,7 +371,7 @@ $max_unit= $prod['max_sup_unit'];
                                             <div class="row form-group model-name">
                                                 <label class="col-sm-3 label-title">Time to Expire</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" id="exp_date" class="form-control" placeholder="Select date" name="exp_date" id="model" value="<? echo $prod['prod_expdate']; ?>" >	
+                                                    <input type="date" id="exp_date" class="form-control" placeholder="Select date" name="exp_date" id="model" value="<? echo $prod['prod_expdate']; ?>" data-parsley-group="information" data-parsley-required/>	
                                                 </div>
                                             </div>
 
@@ -443,7 +459,14 @@ $max_unit= $prod['max_sup_unit'];
                                                 <label class="col-sm-3 label-title">Shipping Terms <span class="required">*</span></label>
                                                 <div class="col-sm-9">
                                                     <div class="checkbox">
-                                                        <input type="text" class="form-control" name="sh_terms" value="<?echo $prod['shipping_terms']; ?>" required>
+                                                         <?
+                                                    foreach($PSH_Terms as $Sh) {
+                                                    $Shl=strtolower($Sh);
+                                                    if($prod['shipping_terms']==$Shl) $ch="checked"; else $ch="";
+                                                    echo "<input type='radio' name='sh_terms' value='$Shl' id='$Shl' $ch> <label for='$Stl'>$Sh</label>";
+                                                    }
+                                                    ?>	
+<!--                                                        <input type="text" class="form-control" name="sh_terms" value="<?echo $prod['shipping_terms']; ?>" required>-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -545,37 +568,18 @@ $max_unit= $prod['max_sup_unit'];
     }
 </script>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     jQuery(function($) {
     $( "#exp_date" ).datepicker({
-        alert('santosh');
+      
 					showOtherMonths: true,
 					selectOtherMonths: false,
-					//isRTL:true,
-			
 					
-					/*
-					changeMonth: true,
-					changeYear: true,
-					
-					showButtonPanel: true,
-					beforeShow: function() {
-						//change button colors
-						var datepicker = $(this).datepicker( "widget" );
-						setTimeout(function(){
-							var buttons = datepicker.find('.ui-datepicker-buttonpane')
-							.find('button');
-							buttons.eq(0).addClass('btn btn-xs');
-							buttons.eq(1).addClass('btn btn-xs btn-success');
-							buttons.wrapInner('<span class="bigger-110" />');
-						}, 0);
-					}
-			*/
 				});
     });
     
     
-  </script>  
+  </script>  -->
     
 <?php /* === Code by Abhishek kandari=== End */ ?>
 <?
@@ -614,6 +618,7 @@ $unit_price=$prc_val.'/'.$prc_unit;
 $max_price=trim(addslashes($_POST['max_price']));
 
 $nego=addslashes($nego);
+$sh_terms=addslashes($sh_terms);
 $prod_st=@join(",",$prod_st);
 $size_tp=addslashes($size_tp);
 $size_val=trim(addslashes($size_val));
@@ -665,6 +670,7 @@ $set.=",unit_price_unit='".$prc_unit."'";
 $set.=",prod_maxprice='$max_price'";
 
 $set.=",price_negotiable='$nego'";
+$set.=",shipping_terms='$sh_terms'";
 $set.=",type_or_status='$prod_st'";
 $set.=",prod_size='$size_val'";
 $set.=",prod_size_unit='".$size_tp."'";

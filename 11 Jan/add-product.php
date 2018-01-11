@@ -183,14 +183,24 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 						  
 						  
                           <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Maximum Price <span class="required">*</span></label>
+                            <label class="col-sm-3 label-title">Max Price <span class="required">*</span></label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="max_price" id="max_price" placeholder="" required 
 							  value="<? /* echo @$max_price; */ ?>" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
                             </div>
                           </div>
 
-                         
+                           <div class="row form-group">
+                            <label class="col-sm-3">Is price negotiable?<span class="required">*</span></label>
+                            <div class="col-sm-9 user-type">
+							  <?
+							  foreach($PS_Negot as $St) {
+							    $Stl=strtolower($St);
+								echo "<input type='radio' name='nego' value='$Stl' id='$Stl'> <label for='$Stl'>$St</label>";
+							  }
+							  ?>
+                            </div>
+                          </div>
 						  
 					
 						  
@@ -224,7 +234,9 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 								</div> <!-- /.form-group -->
 							  </div>
 							  <div class="col-sm-6">
+                                                              
 							     <select class="form-control" name="size_unit">
+                                                                    <option value="">Select Unit</option>
 									 <?
 									 $size_unit = isset($size_unit)?$size_unit:'';
 									 echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$size_unit);
@@ -262,6 +274,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							  </div>
 							  <div class="col-sm-6">
 							     <select class="form-control" name="ord_qunit">
+                                                                 <option value="">Select Unit</option>
 									 <?
 									 $ord_qunit = isset($ord_qunit)?$ord_qunit:'';
 									 echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$ord_qunit);
@@ -287,17 +300,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>
 						  
 						  
-						  <div class="row form-group">
-                            <label class="col-sm-3">Is price negotiable? <span class="required">*</span></label>
-                            <div class="col-sm-9 user-type">
-							  <?
-							  foreach($PS_Negot as $St) {
-							    $Stl=strtolower($St);
-								echo "<input type='radio' name='nego' value='$Stl' id='$Stl'> <label for='$Stl'>$St</label>";
-							  }
-							  ?>
-                            </div>
-                          </div>
+						
 
 
 <ul class="list-inline pull-right">
@@ -361,12 +364,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                           </div>-->
 						  
 						  
-						  <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Colour</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="color" id="text" value="<? echo @$color; ?>">
-                            </div>
-                          </div>
+						  
 
 						  
 <ul class="list-inline pull-right">
@@ -418,12 +416,12 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                             <label class="col-sm-3 label-title">Keywords<span class="required">*</span></label>
                             <div class="col-sm-9 row">
 							  <div class="col-md-6">
-							   <input required type="text" class="form-control" name="key1" id="key1" value="<? echo @$key1; ?>">
-							   <input required type="text" class="form-control" name="key2" id="key2" value="<? echo @$key2; ?>">
+							   <input required type="text" class="form-control" name="key1"  placeholder="Enter Keyword1"id="key1" value="<? echo @$key1; ?>">
+							   <input required type="text" class="form-control" name="key2" placeholder="Enter Keyword1" id="key2" value="<? echo @$key2; ?>">
 							   </div>
 							   <div class="col-md-6">
-							   <input required type="text" class="form-control" name="key3" id="key3" value="<? echo @$key3; ?>">
-							   <input required type="text" class="form-control" name="key4" id="key4" value="<? echo @$key4; ?>">
+							   <input required type="text" class="form-control" name="key3" placeholder="Enter Keyword1" id="key3" value="<? echo @$key3; ?>">
+							   <input required type="text" class="form-control" name="key4" placeholder="Enter Keyword1" id="key4" value="<? echo @$key4; ?>">
 							   </div>
 							   
                             </div>
@@ -487,7 +485,13 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                               <input type="text" class="form-control" name="material" id="text" placeholder="" value="<? echo @$material; ?>">
                             </div>
                           </div>
-						  
+						
+                          <div class="row form-group add-title">
+                            <label class="col-sm-3 label-title">Colour</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="color" id="text" value="<? echo @$color; ?>">
+                            </div>
+                          </div>
 						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">HS Code</label>
                             <div class="col-sm-9">
@@ -495,19 +499,27 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
                             </div>
                           </div>
 						  
-						  <div class="row form-group add-title">
+			   <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Model/Articles Number</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="model" id="text" placeholder="" value="<? echo @$model; ?>" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
                             </div>
                           </div>
+                          
+                          <div class="row form-group add-title">
+                            <label class="col-sm-3 label-title">Other Related Items</label>
+                            <div class="col-sm-9">
+                              <textarea class="form-control" name="related" rows="3"><? echo @$related; ?></textarea>
+                            </div>
+                          </div>
 						  
-						  <div class="row form-group add-title">
-                            <label class="col-sm-3 label-title">Business Type</label>
+			<div class="row form-group add-title">
+                            <label class="col-sm-3 label-title">Manufacturers</label>
                             <div class="col-sm-9">
                               <input type="text" class="form-control" name="manufac" id="text" placeholder="" value="<? echo @$manufac; ?>">
                             </div>
                           </div>
+                           
 						  
 						  
 <ul class="list-inline pull-right">
@@ -531,6 +543,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							  </div>
 							  <div class="col-sm-6">
 							     <select class="form-control" name="max_unit">
+                                                                 <option value="">Select Unit</option>
 									 <?
 									 $max_unit=isset($maxunit)?$max_unit:'';
 									 echo $drop->get_dropdown($db,"select units_name,units_name from prod_units where status='0'",$max_unit);
@@ -540,12 +553,44 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							  
                             </div>
                           </div>
+                          
+                          
+                                                                 
+                          
+                          
+                          
+                          
 						  
-						  <div class="row form-group">
-                            <label class="col-sm-3">Shipping Terms<span class="required">*</span></label>
-                            <div class="col-sm-9 user-type">
+	             <div class="row form-group">
+                            <label class="col-sm-3">Shipping Terms</label>
+<!--                            <div class="col-sm-9 user-type">
 								<input type="text" class="form-control" name="sh_terms" id="sh_terms" value="<? echo @$sh_terms; ?>" >
-                            </div>
+                            </div>-->
+
+
+
+<!--                                            <?
+							  foreach($PS_Negot as $St) {
+							    $Stl=strtolower($St);
+								echo "<input type='radio' name='nego' value='$Stl' id='$Stl'> <label for='$Stl'>$St</label>";
+							  }
+							  ?>-->
+
+                                                         <?
+							  foreach($PSH_Terms as $Sh) {
+							    $Shl=strtolower($Sh);
+								echo "<input type='radio' name='sh_terms' value='$Shl' id='$Shl'> <label for='$Shl'>$Sh</label>";
+							  }
+							  ?>
+
+
+
+
+
+
+
+
+
                           </div>
 						  
 						  <div class="row form-group add-title">
@@ -571,7 +616,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 						<div class="tab-pane" role="tabpanel" id="step6">
                           <h4>Additional Details</h4>
                           
-						  <div class="row form-group add-title">
+<!--						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Custom Fields Name-Value</label>
                             <div class="col-sm-9 row">
 							  <div class="col-md-6">
@@ -581,7 +626,7 @@ $pro_subcategory2 .= $drop->get_dropdown($db,$DropDownQry,$subcategory2); ?>
 							   <input type="text" class="form-control" name="cfn2" id="text" value="<? echo @$cfn2; ?>">
 							  </div>
                             </div>
-                          </div>
+                          </div>-->
 						  
 						  <div class="row form-group add-title">
                             <label class="col-sm-3 label-title">Contract Period</label>
