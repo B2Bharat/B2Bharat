@@ -167,7 +167,7 @@ $getnewprod=$db->get_all_asso("SELECT `id`,`category_name`,`parent_id` FROM cate
 						{
 							
 						}else{
- 						  echo substr( $presuppliar['company_intro'],0,170).'...'; 
+ 						  echo substr( $presuppliar['company_intro'],0,100).'...'; 
 						}
 						?>
 						</p>
