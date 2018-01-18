@@ -183,7 +183,7 @@ $getnewprod=$db->get_all_asso("SELECT `id`,`category_name`,`parent_id` FROM cate
             </div>
           </div>
         </div>
-<!--        <div class="block block-news news_wraper">
+<!--       <div class="block block-news news_wraper">
           <div class="panel panel-default">
               
             <div style="color:white;" class="panel-heading">
@@ -197,8 +197,8 @@ $getnewprod=$db->get_all_asso("SELECT `id`,`category_name`,`parent_id` FROM cate
               <div class="text-center"> <a href="<?echo $siteurl;?>/news-list" class="btn btn-global">More News <i class="fa fa-arrow-right"></i></a> </div>
             </div>
           </div>
-        </div>
-		-->
+        </div>-->
+		
 		<?php 
 		$datatrade = $db->get_all_asso("select trade_shows.*,company.name as cname,company.street as cstreet,company.city as ccity,company.country as ccode from trade_shows,company where trade_shows.user_id = company.user_id AND trade_shows.status='1' order by crcdt DESC LIMIT 3")
 		
