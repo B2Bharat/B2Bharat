@@ -164,7 +164,7 @@ include "include/hideCompany.php";
                             <td><?echo strtoupper($cinfo['fname']);?></td>
                           </tr>
                            <tr>
-                            <td><strong>Contact Person</strong></td>
+                            <td><strong>Accepted Currencies</strong></td>
                             <td><strong>:</strong></td>
                             <td><?echo $curren;?></td>
                           </tr>
