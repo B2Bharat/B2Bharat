@@ -1002,38 +1002,40 @@ else{
 			</div> 
         </div> 
         
-        <div class="block block-story success_pad">
+         <div class="block block-story success_pad">
 		<div class="panel panel-default">
-		  <div class="panel-heading">
-          <h3><i class="fa fa-comments"></i> Success Story</h3>
+                    <div style="color:white;" class="panel-heading">
+                      <h3><i style="color:white;" class="fa fa-comments"></i> Success Story</h3>
 		  </div>
           <div id="cbp-qtrotator" class="cbp-qtrotator">
-             <div class="cbp-qtcontent cbp-qtcurrent" style="transition: opacity 700ms ease;">
+            <div class="cbp-qtcontent cbp-qtcurrent" style="transition: opacity 700ms ease;">
 			
-			<?$trades = $db->get_all_asso("select * from success_stories where status='1' order by rand() LIMIT 3");
+			<?$trades = $db->get_all_asso("select * from success_stories where status='1' order by rand() LIMIT 2");
 		     foreach($trades as $trade)
 			 {
+                          $userdetail=$db->get_all_asso("select * from register where id=".$trade['user_id']);
 				
 			 			?>
 
               <div class="desc"><h5><a href="success-stories.php" title=""><?echo ucfirst(substr($trade['story_title'],0,50));?></a></h5>
-			  
+                                                                       
+<!--                  <h5> User Id: <?php echo $trade['user_id'];?></h5>-->
+                  <div>   <h5>Name:<? echo $userdetail[0]['fname']." ".$userdetail[0]['lname'];?></h5></div>
+                 
 			  <span><a href="success-stories.php" title=""><?echo ucfirst(substr($trade['story_name'],0,50));?></a></span>
+                         <div><h5>Date:<?php echo $trade['crcdt'];?></h5></div>
+                        
 			  </div>
             
-              <div class="media">
-                              <div class="media-body">
-                  
-                  
-                   </div>
-              </div>
+             
 			 <?php } ?>
+                        
+                 <div class="text-center cta_view"> <a href="<?echo $siteurl;?>/success-stories" class="btn btn-global">View All</a> </div>
             </div>
             <hr>
             <span class="cbp-qtprogress" style="transition: width 9000ms linear; width: 100%;"></span></div>
         </div>
 		</div>
-		
         <div class="block block-supplier">
           <div class="panel panel-default">
             <div class="panel-heading">
