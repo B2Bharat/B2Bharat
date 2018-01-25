@@ -547,6 +547,12 @@ $productcategory .= $drop->get_dropdown($db,$DropDownQry,$prod_category); */
                                                 <?$COM_policy = isset($COM['company_policy'])?$COM['company_policy']:'';?>
                                                 <textarea class="form-control" maxlength="1000" placeholder="you can mention the details such as Our team!,WhyUs!,Vision!,Mission!,Goal!,Value!" rows="3" name="COM_policy"><?echo $COM_policy;?></textarea>
                                             </div>
+                                             <div class="col-md-6">
+                                                <label>Product Portfolia: </label>
+                                                <?$COM_policy = isset($COM['prod_portfolio'])?$COM['prod_portfolio']:'';?>
+                                                <textarea class="form-control" maxlength="2000" placeholder=" Enter Product Portfolia" rows="3" name="prod_portfolio"><?echo $prod_portfolio;?></textarea>
+                                            </div>
+                                            
                                             <div class="col-md-6">
                                                 <label>Awards & Testimonials: </label>
                                                 <?$COM_pterms = isset($COM['payment_terms'])?$COM['payment_terms']:'';?>
