@@ -193,7 +193,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
                             <div class="col-sm-9">
 
-                              <input type="text" name="COM_store_name" class="form-control" id="store_name" placeholder="" value="<?echo isset($COM['store_name'])?$COM['store_name']:'';?>">
+                                <input type="text" name="COM_store_name" maxlength="60" class="form-control" id="store_name" placeholder="" value="<?echo isset($COM['store_name'])?$COM['store_name']:'';?>">
 
                             </div>
 
@@ -342,7 +342,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_lowner=isset($COM['legal_owner_name'])?$COM['legal_owner_name']:'';?>	
 
-                              <input type="text" name="COM_lowner" class="form-control" id="text" placeholder="" value="<?echo $COM_lowner;?>">
+                                                        <input type="text"  maxlength="60"  name="COM_lowner" class="form-control" id="text" placeholder="" value="<?echo $COM_lowner;?>">
 
                             </div>
 
@@ -386,7 +386,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_street = isset($COM['street'])?$COM['street']:'';?>
 
-                              <input type="text" name="COM_street" class="form-control" id="street" placeholder="" value="<?echo $COM_street;?>">
+                                                        <input type="text" maxlength="110" name="COM_street" class="form-control" id="street" placeholder="" value="<?echo $COM_street;?>">
 
                             </div>
 
@@ -462,7 +462,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_zip = isset($COM['zip_code'])?$COM['zip_code']:'';?>
 
-                              <input type="text" name="COM_zip" class="form-control" id="text" placeholder="" value="<?echo $COM_zip;?>" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
+                                                        <input type="text" name="COM_zip" class="form-control" maxlength="12" id="text" placeholder="" value="<?echo $COM_zip;?>" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
 
                             </div>
 
@@ -476,7 +476,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_site = isset($COM['website'])?$COM['website']:'';?>
 
-                              <input type="text" name="COM_site" class="form-control" id="text" placeholder="" value="<?echo $COM_site;?>">
+                              <input type="url" name="COM_site" class="form-control" id="text" placeholder="" value="<?echo $COM_site;?>">
 
                             </div>
 
@@ -512,7 +512,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_package = isset($COM['package_det'])?$COM['package_det']:'';?>
 
-                              <textarea name="COM_package" class="form-control" rows="3"><?echo $COM_package;?></textarea>
+                                                        <textarea maxlength="110" name="COM_package" class="form-control" rows="3"><?echo $COM_package;?></textarea>
 
                             </div>
 
@@ -985,7 +985,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_mclients = isset($COM['main_clients'])?$COM['main_clients']:'';?>
 
-                              <textarea class="form-control" rows="3" name="COM_mclients"><?echo $COM_mclients;?></textarea>
+                                                        <textarea class="form-control" placeholder="enter upto 1000 charactrers" maxlength="1000" rows="3" name="COM_mclients"><?echo $COM_mclients;?></textarea>
 
                             </div>
 
@@ -1003,7 +1003,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_mproduct1 = isset($COM['main_product1'])?$COM['main_product1']:'';?>
 
-                              <input type="text" class="form-control" id="main_product" name="COM_mproduct1" placeholder="" value="<?echo $COM_mproduct1;?>">
+                                                        <input type="text" class="form-control" maxlength="60" id="main_product" name="COM_mproduct1" placeholder="" value="<?echo $COM_mproduct1;?>">
 
                             </div>
 
@@ -1059,7 +1059,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_oproducts = isset($COM['other_product'])?$COM['other_product']:'';?>
 
-                              <textarea class="form-control" maxlength="60" placeholder="Enter main product2" required title="Characters should upto 60" rows="3" name="COM_oproducts"><?echo $COM_oproducts;?></textarea>
+                              <textarea class="form-control" maxlength="110" placeholder="Enter main product2" required title="Characters should upto 60" rows="3" name="COM_oproducts"><?echo $COM_oproducts;?></textarea>
 
                             </div>
 
@@ -1072,7 +1072,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_lead_time = isset($COM['avg_lead_time'])?$COM['avg_lead_time']:'';?>
 
-                              <input type="text" class="form-control" id="text" name="COM_lead_time" placeholder="" value="<?echo $COM_lead_time;?>">
+                                                        <input type="text" maxlength="60"class="form-control" id="text" name="COM_lead_time" placeholder="" value="<?echo $COM_lead_time;?>">
 
                             </div>
 
@@ -1153,7 +1153,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							 <?$COM_factory_loc = isset($COM['factory_location'])?$COM['factory_location']:'';?>
 
-                              <input type="text" class="form-control" id="flocation" name="COM_factory_loc" placeholder="" value="<?echo $COM_factory_loc;?>">
+                                                         <input type="text"  maxlength="60"class="form-control" id="flocation" name="COM_factory_loc" placeholder="" value="<?echo $COM_factory_loc;?>">
 
                             </div>
 
@@ -1167,7 +1167,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							 <?$COM_factory_size = isset($COM['factory_size'])?$COM['factory_size']:'';?>
 
-                              <input type="text" class="form-control" id="text" name="COM_factory_size" placeholder="" value="<?echo $COM_factory_size;?>">
+                                                         <input type="text" class="form-control" maxlength="60" id="text" name="COM_factory_size" placeholder="" value="<?echo $COM_factory_size;?>">
 
                             </div>
 
@@ -1181,7 +1181,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							 <?$COM_production_limit = isset($COM['production_capacity'])?$COM['production_capacity']:'';?>
 
-                              <input type="text" class="form-control" id="plimit" name="COM_production_limit" placeholder="" value="<?echo $COM_production_limit;?>">
+                                                         <input type="text" class="form-control" maxlength="60" id="plimit" name="COM_production_limit" placeholder="" value="<?echo $COM_production_limit;?>">
 
                             </div>
 
@@ -1219,7 +1219,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_mproduct = isset($COM['major_product_sell'])?$COM['major_product_sell']:'';?>
 
-                              <input type="text" class="form-control" id="text" name="COM_mproduct" placeholder="" value="<?echo $COM_mproduct;?>">
+                                                        <input type="text" maxlength="110" class="form-control" id="text" name="COM_mproduct" placeholder="" value="<?echo $COM_mproduct;?>">
 
                             </div>
 
@@ -1233,7 +1233,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_bproduct = isset($COM['major_product_buy'])?$COM['major_product_buy']:'';?>
 
-                              <input type="text" class="form-control" id="text" name="COM_bproduct" placeholder="" value="<?echo $COM_bproduct;?>">
+                              <input type="text"  maxlength="110"  class="form-control" id="text" name="COM_bproduct" placeholder="" value="<?echo $COM_bproduct;?>">
 
                             </div>
 
@@ -1295,7 +1295,7 @@ $productgroup .= $drop->get_dropdown($db,$DropDownQry,$COM_buss_group);
 
 							<?$COM_near_port = isset($COM['nearest_port'])?$COM['nearest_port']:'';?>
 
-                              <input type="text" class="form-control" id="text" name="COM_near_port" placeholder="" value="<?echo $COM_near_port; ?>">
+                                                        <input type="text" maxlength="60" class="form-control" id="text" name="COM_near_port" placeholder="" value="<?echo $COM_near_port; ?>">
 
                             </div>
 
