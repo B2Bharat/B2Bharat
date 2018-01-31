@@ -63,21 +63,18 @@ $getcatg=$db->get_all_asso($sql . $limit);
 							</a>
                                                               
                                                            
-                                                            <h6>Description</h6>
+                                                            
                                                             
                                                              <?php echo ucwords($desc)?><br/>
 							<?if($mctot !=0){
 								$Disp="<ul class='cat-list'>";
                                                                 
-                                                            
+                                                                
 								foreach($subcatg as $sbcat){
 									$sbcatnam = $sbcat['category_name'];
                                                                         
-                                                                        
 									$sbcatnam1=strtolower(str_replace(' ','-',$sbcat['category_name']));
-                                                                         
 									$sbcatname=ucwords($sbcatnam);
-                                                                         
 									$sburl = $siteurl."/classifieds-categories-list/$maincat/$sbcatnam1";
 									$Disp .=" <li><i class='fa fa-angle-right'></i> <a href='$sburl'><b>$sbcatname</b></a>";
 									$dd=$sbcat['id'];
@@ -86,7 +83,6 @@ $getcatg=$db->get_all_asso($sql . $limit);
 								
 									
 								$subcatg_main=$db->get_all_asso("select cat_name from sub_category where sub_cat_id='$dd' order by cat_name asc limit 10");
-                                                                
 								$mctot_main=count($subcatg_main);
 								
 								if(!empty($mctot_main))
@@ -94,11 +90,9 @@ $getcatg=$db->get_all_asso($sql . $limit);
                                                            
 								$Disp .="<ul class='cat-list'>";
                                                              
-                                                             
 								foreach($subcatg_main as $mctot_oi){								
 									$sbcatnam_oi = $mctot_oi['cat_name'];
 									$sbcatnam1_oi=strtolower(str_replace(' ','-',$mctot_oi['cat_name']));
-                                                                           
 									$sbcatname_oi=ucwords($sbcatnam_oi);
 									$sburl_oi = $siteurl."/classifieds-categories-list/$maincat/$sbcatnam1_oi";
 									$Disp .=" <li><i class='fa fa-angle-right'></i> <a href='$sburl_oi'>$sbcatname_oi</a></li>";
