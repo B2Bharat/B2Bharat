@@ -78,7 +78,7 @@ $max_unit= $prod['max_sup_unit'];
                                                         <?
                                                         $uinfo = $db->singlerec("select * from register where id='$user_id'");
                                                          $prod_group_name=isset($prod_group_name)?$prod_group_name:'';
-                                                        echo $drop->get_dropdown($db, "select id,prod_group_name,prod_group_name from product where   prod_status='0'",$prod['prod_group_name']);
+                                                        echo $drop->get_dropdown($db, "select prod_group_name,prod_group_name from product where   prod_status='0'",$prod['prod_group_name']);
                                                         
                                                         ?>
                                                     </select>
