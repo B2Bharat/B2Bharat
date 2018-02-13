@@ -422,10 +422,11 @@
 <!--section---------close--------lEFT---SIDEBA-------> 
 
 <script src="<? echo $siteurl; ?>/assets/javascript/jquery.min.js"></script> 
-	<script src="<? echo $siteurl; ?>/assets/js/jquery-ui.min.js"></script>
+	
 	<script src="<? echo $siteurl; ?>/assets/javascript/bootstrap.js"></script>
 	
 	<script src="<? echo $siteurl; ?>/assets/js/sweetalert.min.js"></script>
+        <script src="<? echo $siteurl; ?>/assets/js/jquery-ui.min.js"></script>
 	
 	<script src="<? echo $siteurl; ?>/assets/js/custom2.js"></script>
 	
