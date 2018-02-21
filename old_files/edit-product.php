@@ -78,7 +78,7 @@ $max_unit= $prod['max_sup_unit'];
                                                         <?
                                                         $uinfo = $db->singlerec("select * from register where id='$user_id'");
                                                          $prod_group_name=isset($prod_group_name)?$prod_group_name:'';
-                                                        echo $drop->get_dropdown($db, "select prod_group_name,prod_group_name from product where   prod_status='0'",$prod['prod_group_name']);
+                                                        echo $drop->get_dropdown($db, "select prod_group_name,prod_group_name from product  ",$prod['prod_group_name']);
                                                         
                                                         ?>
                                                     </select>
@@ -198,7 +198,7 @@ $max_unit= $prod['max_sup_unit'];
                                                 <div class="col-sm-9">
                                                     <input type="text"  id="address" class="form-control" maxlength="30" required title="Character range should upto 30 "  name="origin" id="model" value="<? echo $prod['place_of_origin']; ?>" required>	
                                                 </div>
-                                                  <div id="map" style="height:200px;width:70%; margin-left:200px;" ></div>
+<!--                                                  <div id="map" style="height:200px;width:70%; margin-left:200px;" ></div>-->
                                             </div>
 
                                             <div class="row form-group model-name">
@@ -393,7 +393,7 @@ $max_unit= $prod['max_sup_unit'];
                                             <div class="row form-group model-name">
                                                 <label class="col-sm-3 label-title">Time to Expire</label>
                                                 <div class="col-sm-9">
-                                                    <input type="date" id="exp_date" class="form-control" placeholder="Select date" name="exp_date" id="model" value="<? echo $prod['prod_expdate']; ?>" data-parsley-group="information" data-parsley-required/>	
+                                                    <input type="text" id="exp_time" class="form-control" placeholder="Select date" name="exp_time" id="model" value="<? echo $prod['prod_expdate']; ?>" data-parsley-group="information" data-parsley-required/>	
                                                 </div>
                                             </div>
 
@@ -672,7 +672,7 @@ $pay_type=@join(",",$_POST['pay_method']);
 $ord_qunit=addslashes($ord_qunit);
 $ord_quan=trim(addslashes($ord_quan));
 $min_quan=$ord_quan.'/'.$ord_qunit;
-$exp_date=trim(addslashes($exp_date));
+$exp_time=trim(addslashes($exp_time));
 $vdeo=trim(addslashes($vdeo));
 
 $color=trim(addslashes($color));
@@ -723,7 +723,7 @@ $set.=",payment_type='$pay_type'";
 $set.=",prod_minquantity='$ord_quan'";
 $set.=",prod_quantitytype='$ord_qunit'";
 
-$set.=",prod_expdate='$exp_date'";
+$set.=",prod_expdate='$exp_time'";
 $set.=",video_embed_code='$vdeo'";
 
 $set.=",color='$color'";
@@ -798,7 +798,7 @@ echo "<script>swal('Oops..', 'Fill all the required fields!', 'error');</script>
 ?>
 
 
-<script>
+<!--<script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
@@ -832,4 +832,4 @@ echo "<script>swal('Oops..', 'Fill all the required fields!', 'error');</script>
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCntmJ5TdbgO9HQ-fsPqVYtmxuuYMcQKwE&callback=initMap">
-    </script>
+    </script>-->
