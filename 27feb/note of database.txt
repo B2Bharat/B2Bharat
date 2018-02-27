@@ -1,0 +1,6 @@
+make one field in product table "prod_group_id"
+
+           Type         =   "Int"
+           Length/Values=    "11"
+           Default      =   "none"
+ Adjust null privileges = yes(checked)
