@@ -28,7 +28,7 @@ if(!empty($Main_Srch)){
 		if($MS_Country !="") 
 			$que.=" and b.country='$MS_Country'";
 		if($MS_Key !="")
-			$que.=" and (a.prod_group_name like '%$MS_Key%' or b.fname like '%$MS_Key%' or b.lname like '%$MS_Key%' or a.prod_name like '%$MS_Key%' or a.keyword1 like '%$MS_Key%' or a.keyword2 like '%$MS_Key%' or a.keyword3 like '%$MS_Key%' or a.keyword4 like '%$MS_Key%' or c.category_name like '%$MS_Key%' or d.name like '%$MS_Key%')";
+			$que.=" and (a.prod_group_name like '%$MS_Key%' or b.fname like '%$MS_Key%' or b.lname like '%$MS_Key%' or a.prod_name like '%$MS_Key%' or a.keyword1 like '%$MS_Key%' or a.keyword2 like '%$MS_Key%' or a.keyword3 like '%$MS_Key%' or a.keyword4 like '%$MS_Key%' or c.category_name like '%$MS_Key%' or d.name like '%$MS_Key%' or d.legal_owner_name like '%$MS_Key%' or d.store_name like '%$MS_Key%')";
 		    // print_r($que); die();
                        
 		
