@@ -15,6 +15,7 @@ $Message  = isSet($Message) ? $Message : '' ;
 $prod_group=isSet($prod_group) ? $prod_group : '' ;
 
 $prod_category=isSet($prod_category) ? $prod_category : '' ;
+
 $prod_subcategory=isSet($prod_subcategory) ? $prod_subcategory : '' ;
 
 $subcategory2=isSet($subcategory2) ? $subcategory2 : '' ;
