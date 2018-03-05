@@ -1,3 +1,0 @@
- please update company table
-     field name=:   emp_count 
-                   length:100
