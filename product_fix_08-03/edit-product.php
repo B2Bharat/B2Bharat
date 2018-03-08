@@ -3,6 +3,7 @@ include "header.php";
 include "include/searchDiv.php";
 include "include/useronly.php";
 $uinfo = $db->singlerec("select * from register where id='$user_id'");
+$userid=$uinfo['id'];
 $prid = isset($prid)?$prid:'';
 $dec=$com_obj->decid($prid);
 $prod=$db->singlerec("select * from product where id='$dec'");
@@ -72,22 +73,37 @@ $max_unit= $prod['max_sup_unit'];
                                                 <div class="col-sm-9">
 <!--                                                    <input type="text" class="form-control"  pattern="[a-z|A-z|0-9|\s]{1,40}" required title="Enter upto 40 characters" name="prod_group_name" id="text" value="<? echo $prod['prod_group_name']; ?>" required>-->
                                                 
-                                                    <select class="form-control" name="prod_group_name" required>
-<!--                                                           <option value="">Select Product Group</option>-->
-                                                     
-                                                        <?
-                                                        $uinfo = $db->singlerec("select * from register where id='$user_id'");
-                                                         $prod_group_name=isset($prod_group_name)?$prod_group_name:'';
-                                                        echo $drop->get_dropdown($db, "select prod_group_name,prod_group_name from product  ",$prod['prod_group_name']);
-                                                        
-                                                        ?>
-                                                    </select>
+                                                    
+                                                     <?php
+                                                  $Nextid=$db->singlerec(" select Max(prod_group) from product where userid=$userid");
+                                                  $groupnextid= $Nextid[0]+1;
+                                                 
+                                                  
+                                                  ?>
+                                                  
+                                                    <select class="form-control"   onchange="myFunction(this.value,this)" name="prod_group_name"  required>
+                                                     <?php     echo $drop->get_dropdown($db,"select DISTINCT prod_group, prod_group_name from product where userid='$user_id'");
+                                                   ?>
+                                                   <option value="0" >Other</option>
+                               </select>
+                                <input type="hidden" name="tmp_group_id" value="<?php echo  $groupnextid; ?>">
+                                <input type="hidden" id="tmp_group_name" name="tmp_group_name" value="">
+                                
+                                               </div>
+                                                 </div>
+                                                 
+                                                 <div class="row form-group add-title" id="group_id" style=" display: none;" >
+                            <label class="col-sm-3 label-title">New Product group  <span class="required">* </span></label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control"  placeholder="Enter product group name  " name="new_prod_group" id="new_prod_group" placeholder="" value="" >
+                            </div>
+                          </div>
+						  
                                                        
                                                
                                                 
                                                 
-                                                </div>
-                                            </div>
+                                                
 
 
 
@@ -593,6 +609,29 @@ $max_unit= $prod['max_sup_unit'];
 </div>
 <?php /* === Code by Abhishek kandari=== start */ ?>
 <script>
+function myFunction(gid,sel)
+{
+    if(gid==0)
+    {
+       
+         document.getElementById("group_id").style.display = "block";
+         //  alert(sel.options[sel.selectedIndex].text);
+    
+         
+   
+    }
+    else
+    {
+         document.getElementById("group_id").style.display = "none";
+          document.getElementById("tmp_group_name").value=sel.options[sel.selectedIndex].text;
+          alert(document.getElementById("tmp_group_name").value);
+        
+    }
+}
+</script>
+
+
+<script>
     function setSubcat(mid) {
         //alert(mid);
         $.ajax({
@@ -634,7 +673,26 @@ if(isset($ed_Prod)) {
 $prod_name=trim(addslashes($prod_name));
 $permalink=str_replace(" ", "-", $prod_name);
 $permalink=strtolower($permalink);
-$prod_group_name=trim(addslashes($prod_group_name));
+//$prod_group_name=trim(addslashes($prod_group_name));
+	$prod_group_name=trim(addslashes($prod_group_name));
+	if($prod_group_name==0)
+	{
+	    $prod_group_name=$new_prod_group;
+	   // $tmp_group_id=$tmp_group_id;
+	}
+	else
+	{
+	    $tmp_group_id=$prod_group_name;
+	    $prod_group_name=$tmp_group_name;
+	}
+	
+	
+	
+	$perm=str_replace(" ", "-", $prod_group_name);
+	//	echo "<script>swal('Oops..', '.$perm.', 'error');</script>";
+	$perm=strtolower($perm);
+	
+	
 $cat=addslashes($cat);
 $sub_cat=addslashes($sub_cat);
 /* === Code by Abhishek kandari=== Start*/
@@ -688,7 +746,10 @@ $g_period=trim(addslashes($g_period));
 
 if($prod_name!="") {
 $set="permalink='$permalink'";
-$set.=",prod_group_name='$prod_group_name'";
+//$set.=",prod_group_name='$prod_group_name'";
+	$set.=",prod_group='$tmp_group_id'";
+	
+	$set.=",prod_group_name='$prod_group_name'";
 $set.=",prod_name='$prod_name'";
 $set.=",prod_category='$cat'";
 $set.=",prod_subcategory='$sub_cat'";
