@@ -1,0 +1,2 @@
+170//Array payment method newly created
+$paymenttype =array("T/T","L/C","D/A","D/P","Western Union","Money Gram","PayPal","Cash/Cheque","Other");
