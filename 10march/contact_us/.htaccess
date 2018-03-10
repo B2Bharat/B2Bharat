@@ -1,0 +1,53 @@
+RewriteEngine on
+ 
+RewriteCond %{SERVER_PORT} 80 
+#RewriteRule ^(.*)$ http://newsite.com/$1 [R,L]
+RewriteRule ^manage-buying-leads/([^/]*)/([^/]*)$ manage-buying-leads.php?blid=$1&action=$2 [L]
+RewriteRule ^manage-selling-leads/([^/]*)/([^/]*)$ manage-selling-leads.php?slid=$1&action=$2 [L]
+RewriteRule ^manage-trade-show/([^/]*)/([^/]*)$ manage-trade-show.php?trid=$1&action=$2 [L]
+RewriteRule ^manage-news/([^/]*)/([^/]*)$ manage-news.php?nid=$1&action=$2 [L]
+RewriteRule ^add-news/([^/]*)/([^/]*)$ add-news.php?acn=$1&nid=$2 [L]
+RewriteRule ^manage-success-story/([^/]*)/([^/]*)$ manage-success-story.php?sid=$1&action=$2 [L]
+RewriteRule ^add-success-story/([^/]*)/([^/]*)$ add-success-story.php?acn=$1&sid=$2 [L]
+RewriteRule ^email-inbox/([^/]*)/([^/]*)$ email-inbox.php?eid=$1&action=$2 [L]
+RewriteRule ^email-sent/([^/]*)/([^/]*)$ email-sent.php?eid=$1&action=$2 [L]
+RewriteRule ^email-compose/([^/]*)/([^/]*)$ email-compose.php?cid=$1&action=$2 [L]
+RewriteRule ^mail-detail/([^/]*)/([^/]*)$ mail-detail.php?mid=$1&action=$2 [L]
+
+RewriteRule ^manage-product/([^/]*)/([^/]*)$ manage-product.php?prid=$1&acn=$2 [L]
+RewriteRule ^edit-product/([^/]*)/([^/]*)$ edit-product.php?prid=$1 [L]
+RewriteRule ^product-list/([^/]*)$ product-list.php?view=$1 [L]
+RewriteRule ^product-detail/([^/]*)/([^/]*)$ product-detail.php?prid=$1 [L]
+RewriteRule ^article-detail/([^/]*)/([^/]*)$ article-detail.php?arid=$1 [L]
+RewriteRule ^allcategories/([^/]*)/([^/]*)$ allcategories.php?arid=$1&$catname=$2 [L]
+RewriteRule ^subcategories/([^/]+)/([^/]+)/([^/]+) allcategories.php?maincat=$1&$catname=$2&arid=$3 [L]
+RewriteRule ^category-details/([^/]*)/([^/]*)$ category-details.php?arid=$1 [L]
+RewriteRule ^buying-leads-detail/([^/]*)/([^/]*)$ buying-leads-detail.php?blname=$1&blid=$2 [L]
+RewriteRule ^selling-leads-detail/([^/]*)/([^/]*)$ selling-leads-detail.php?slname=$1&slid=$2 [L]
+RewriteRule ^company-detail/([^/]*)/([^/]*)$ company-profile.php?cname=$1&cid=$2
+RewriteRule ^trade-show-detail/([^/]*)/([^/]*)$ trade-show-details.php?cname=$1&trid=$2
+RewriteRule ^contact-supplier/([^/]*)/([^/]*)$ contact-supplier.php?cname=$1&cid=$2
+
+
+RewriteRule ^company-profile/([^/]*)/([^/]*)$ company-home.php?cname=$1&cid=$2
+RewriteRule ^classifieds/([^/]*)$ company-list.php?srch=$1 [L]
+
+RewriteRule ^product-list/([^/]*)/([^/]*)$ product-list.php?cname=$1&poff=$2 [L]
+RewriteRule ^selling-leads-list/([^/]*)/([^/]*)$ selling-leads-list.php?cname=$1&sloff=$2 [L]
+RewriteRule ^buying-leads-list/([^/]*)/([^/]*)$ buying-leads-list.php?cname=$1&bloff=$2 [L]
+
+#category search
+RewriteRule ^classifieds-categories-list/([^/]*)$ product-list.php?mccat=$1 [L]
+RewriteRule ^classifieds-categories-list/([^/]*)/([^/]*)$ product-list.php?mccat=$1&sccat=$2 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php56” package as the default “PHP” programming language.
+#<IfModule mime_module>
+#  AddType application/x-httpd-ea-php56 .php .php5 .phtml
+#</IfModule>
+# php -- END cPanel-generated handler, do not edit
