@@ -1,0 +1,36 @@
+Tasks::::
+1  >>  *Before mail has note sent to perticular mail id and value(to_mail) also was not inserted in db 
+  i have done it in contact supplier form 
+but can  not test on loacalhost coz mail system is not working on localhost which we have tested in front of vibhute sir
+ 
+*Is mail has been sent or not ? we have to test on live server
+   so just add the contact supplier form which 
+I have pushed   
+    but for that 1.add the company-tap file which exist on laptops localhost
+                 2.add contact supplier for redirection in .htaccess file which exist on laptops localhost 
+                       at line no 31 
+                  3. for test insert the values in contact us form,test it is it be inserted in database?
+                   4. And finally test mail has been sent or not?
+
+2  >>
+     wherever the contactus tab is exist on click no of that owner will be dispayed
+
+
+3   >>   In seller >> Seller(company) list 
+                redirection of perticular website if exist else it will redirect to catelog
+                   same functionality of company list in seller
+
+
+4   >>     In Buyers>> Buyers(company) list 
+                redirection of perticular website if exist else it will redirect to catelog
+                   same functionality of company list in seller
+
+
+          * Note ::   Format of mail to reciever or sender can check directluy on server because mail system is not working on localhost so 
+                         we have to do all mail formats on live server carefully 
+
+  
+
+
+                            
+ 
