@@ -26,8 +26,8 @@ if(isset($_POST['enq_submit'])){
 		$enq_phone = isset($enq_phone)?$db->escapstr($enq_phone):'';
 		$enq_subject = isset($enq_subject)?$db->escapstr($enq_subject):'';
                 $enq_prod_name = isset($enq_prod_name)?$db->escapstr($enq_prod_name):'';
-                  $enq_address = isset($enq_prod_name)?$db->escapstr($enq_address):'';
-                    $enq_city = isset($enq_prod_name)?$db->escapstr($enq_city):'';
+                  $enq_address = isset($enq_address)?$db->escapstr($enq_address):'';
+                    $enq_city = isset($enq_city)?$db->escapstr($enq_city):'';
                 
                 $enq_quantity = isset($enq_quantity)?$db->escapstr($enq_quantity):'';
 $enq_unit_type = isset($enq_unit_type)?$db->escapstr($enq_unit_type):'';
