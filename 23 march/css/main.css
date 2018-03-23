@@ -72,13 +72,28 @@ a:focus,
 input:focus {
     text-decoration: none;
     outline: none;
-    color: orange;
+    
    
 }
 .cat:hover{
-   
-    background-color: lightcyan;
+    border-top: 1px solid #d0d0d0;
+   border: 1px solid #777;
+    background-color: whitesmoke;
+/*   -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  webkit-border-radius: 10px;
+    -moz-border-radius: 10px;*/
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(128,128,128,0.9);
+-moz-box-shadow:    0px 0px 30px 0px rgba(128,128,128,0.9);
+box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);
+    border-color: #99d6ff;
+    cursor: pointer;
     
+  
+  
+ 
     
 }
 
@@ -825,7 +840,7 @@ textarea {
 .ad-meta .meta-content span,
 .ad-meta .meta-content a {
     font-weight: 400;
-    color: black;
+    color: #191717;
 }
 .ad-meta1 .meta-content1 span,
 .ad-meta .meta-content a {
@@ -2140,6 +2155,9 @@ box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);
 .short-info a {
     color: #272727;
 }
+.short-info a:hover{
+    color:blue;
+}
 
 .contact-with h4 {
     margin-top: 32px;
@@ -2349,7 +2367,7 @@ box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);
    
 }
 p{
-    margin: 0px 22px 10px;
+    margin: 35px 22px 10px;
 }
 /*p:hover{
       background:white;
@@ -2429,6 +2447,9 @@ p{
     font-size: 16px;
     font-weight: 400;
     color: #000;
+}
+.comp_img{
+    color:brown;
 }
 
 .adpost-details label.label-title {
@@ -2946,8 +2967,13 @@ p{
 
 .ad-profile .user h2 {
     font-weight: 300;
-    color: ;#000000;
+    color: #000000;
     margin-top: 20px;
+}
+.ad-profile .user h2:hover{
+    color:#f60;
+}.short-info li a:hover {
+    color: blue;
 }
 
 .ad-profile .user h3 {
@@ -5567,13 +5593,13 @@ ul {
 }
 
 .btn-red {
-    background-color: #D9A474;
+    background-color: #f89913;
     border: 1px solid#CC24240;
     font-size: 14px !important;
     border-radius: 0px;
     padding: 5px 7px;
     color: #FFF;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 }
 
 .btn-red:hover {
@@ -5630,7 +5656,7 @@ ul {
     margin-bottom: 10px;
 }
 h4:hover{
-    background-color: #e1e1e1;
+    //background-color: #e1e1e1;
     
 }
 .description h4,

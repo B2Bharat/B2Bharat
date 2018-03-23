@@ -1,2 +1,0 @@
-I have done these changes on live server
-add-selling-offer and add-buying offer
