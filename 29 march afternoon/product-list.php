@@ -633,7 +633,7 @@ elseif(isset($_POST['Main_Srch']))
 					<h2><a target="_blank" href="<? echo $siteurl; ?>/product-detail/<? echo $encid; ?>/<? echo $perma; ?>"><? echo substr($pname,0,15); ?></a></h2>
 					
 			        <?php } ?>
-			   <div class="col-md-6 pr_img">
+			   <div class="col-md-6 pr_img vijay">
 			       
 					
 					    <?php if($ownerweburl!='') {  ?>
@@ -648,12 +648,14 @@ elseif(isset($_POST['Main_Srch']))
 				 <p><? echo substr($prd['prod_briefdes'],0,120).'...'; ?></p>
 			   </div>
 			</div>    
-		   <div class="en_wrap">
-                       <strong> <h5 style="margin-left:14px;font-weight: bold;"><? echo $country['company_name']; ?></h5></strong>
+		   <div class="en_wrap" style="margin-top: 0px;">
+                       <strong> <h5 class="comheading" style="margin-left:14px;font-weight: bold;font-size: 18px;"><? echo $country['company_name']; ?></h5></strong>
                      
                      
 				<div class="col-md-7 enqiry_sec">
 				  <p><? echo substr($country['address'],0,50); ?></p>
+                                  <? $city=$db->singlerec("select city_name from city where city_auto_id='$country[city]'"); ?>
+                                  <h4><? echo $city['city_name'];?></h4>
 					<span><i class="fa fa-phone" aria-hidden="true"></i><? echo $country['mobile']; ?></span>		
 				</div>
 				<div class="col-md-5 cta_en">
@@ -1185,5 +1187,37 @@ else{
     }
     .heading:hover{
         color:blue;
+    }
+    
+    .comheading:hover{
+        color:orange;
+        
+    }
+    .vijay{
+       
+    
+    //border: 1px solid orange;
+
+    }
+    
+    .vijay:hover{
+       // border-top: 1px solid #d0d0d0;
+   //border: 1px solid #777;
+    //background-color: whitesmoke;
+/* -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(128,128,128,0.9);
+-moz-box-shadow:    0px 0px 30px 0px rgba(128,128,128,0.9);*/
+//box-shadow:         0px 0px 30px 0px rgba(128,128,128,0.7);
+    //border-color: #99d6ff;
+    border:solid 1px #dadada;
+    cursor: pointer;
+  
+     
+
     }
     </style>
