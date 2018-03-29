@@ -649,7 +649,7 @@ elseif(isset($_POST['Main_Srch']))
 			</div>    
 		   <div class="en_wrap">
 				<div class="col-md-7 enqiry_sec">
-					<h3><? echo $country['company_name']; ?></h3>
+					<h3><? echo substr($country['company_name'],0,20).'..'; ?></h3>
 					<p><? echo substr($country['address'],0,15).'..'; ?></p>
 					<span><i class="fa fa-phone" aria-hidden="true"></i><? echo $country['mobile']; ?></span>		
 				</div>
