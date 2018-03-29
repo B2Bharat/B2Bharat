@@ -644,7 +644,7 @@ elseif(isset($_POST['Main_Srch']))
 					
 			   </div>
 			   <div class="col-md-6 pr_descript">
-				 <p><? echo substr($prd['prod_briefdes'],0,170).'...'; ?>66666   </p>
+				 <p><? echo substr($prd['prod_briefdes'],0,120).'...'; ?>66666   </p>
 			   </div>
 			</div>    
 		   <div class="en_wrap">
