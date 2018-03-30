@@ -218,7 +218,7 @@ $enq_Requirement_purchase=array("Reselling","End Use","Raw Material");
 
 
 
-//add buying offer
+//add buying offer and selling offer
 
 $pref_supplier_location=array("Local","Anywhere India","Outide India");
 $Requirement_urgency=array("Immidiate","After one month");
