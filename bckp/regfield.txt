@@ -1,0 +1,37 @@
+ <div class="form-group col-sm-12 ">
+					  <div class="pad_wrap"><strong class="third_step_title control-label">Country </strong>
+                     
+                     <div class="col-sm-6">
+                     <select name="country" id="country" Onchange="return get_state(this.value);">
+						<option value="">select</option>
+						<?=$drop->get_dropdown($db,"SELECT id,nicename from countries order by nicename asc",'');?>
+                     </select>
+                     </div>
+					 </div>
+                     </div>
+                     <div class="form-group col-sm-12">
+					 <div class="pad_wrap"><strong class="third_step_title control-label">State </strong>
+                     
+					 
+                     <div class="col-sm-6" id="state1">
+					 
+					 <select name="state" id="state" Onchange="return get_city(this.value);">
+						<option value="">select</option>
+						<?=$drop->get_dropdown($db,"SELECT state_auto_id,state_name from state order by state_name asc",@$state);?>
+                     </select>
+                     <!--<input type="text" class="form-control" name="state" id="state" placeholder="Enter State" value="<? echo @$state; ?>">-->
+                     </div>
+					 </div>
+                     </div>
+                     <div class="form-group col-sm-12">
+					 <div class="pad_wrap"><strong class="third_step_title control-label">City </strong>
+                
+                     <div class="col-sm-6" id="city1">
+					 <select name="city" id="city">
+						<option value="">select</option>
+						<?=$drop->get_dropdown($db,"SELECT city_auto_id,city_name from city order by city_name asc",@$city);?>
+                     </select>
+                     <!--<input type="text" class="form-control" name="city" id="city" placeholder="Enter City" value="<? echo @$city; ?>">-->
+                     </div>
+					 </div>
+                     </div>
